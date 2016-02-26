@@ -13,6 +13,14 @@
 		280511011C800109003A668E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 280510FF1C800109003A668E /* ViewController.m */; };
 		280511081C80042E003A668E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 280511061C80042E003A668E /* LaunchScreen.storyboard */; };
 		280511091C80042E003A668E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 280511071C80042E003A668E /* Main.storyboard */; };
+		2805110C1C803488003A668E /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2805110B1C803488003A668E /* Security.framework */; };
+		2805110E1C8034A5003A668E /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2805110D1C8034A5003A668E /* CoreFoundation.framework */; };
+		280511101C8034BC003A668E /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2805110F1C8034BC003A668E /* CoreTelephony.framework */; };
+		280511121C8034CB003A668E /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 280511111C8034CB003A668E /* SystemConfiguration.framework */; };
+		280511141C8034DF003A668E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 280511131C8034DF003A668E /* CoreGraphics.framework */; };
+		280511161C8034EC003A668E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 280511151C8034EC003A668E /* Foundation.framework */; };
+		280511181C8034FD003A668E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 280511171C8034FD003A668E /* QuartzCore.framework */; };
+		2805111A1C803519003A668E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 280511191C803519003A668E /* UIKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +35,14 @@
 		280511061C80042E003A668E /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		280511071C80042E003A668E /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		2805110A1C800609003A668E /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		2805110B1C803488003A668E /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		2805110D1C8034A5003A668E /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
+		2805110F1C8034BC003A668E /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		280511111C8034CB003A668E /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		280511131C8034DF003A668E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		280511151C8034EC003A668E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		280511171C8034FD003A668E /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		280511191C803519003A668E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -34,6 +50,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2805111A1C803519003A668E /* UIKit.framework in Frameworks */,
+				280511181C8034FD003A668E /* QuartzCore.framework in Frameworks */,
+				280511161C8034EC003A668E /* Foundation.framework in Frameworks */,
+				280511141C8034DF003A668E /* CoreGraphics.framework in Frameworks */,
+				280511121C8034CB003A668E /* SystemConfiguration.framework in Frameworks */,
+				280511101C8034BC003A668E /* CoreTelephony.framework in Frameworks */,
+				2805110E1C8034A5003A668E /* CoreFoundation.framework in Frameworks */,
+				2805110C1C803488003A668E /* Security.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -80,6 +104,14 @@
 		280510FA1C7FFEFB003A668E /* lib */ = {
 			isa = PBXGroup;
 			children = (
+				280511191C803519003A668E /* UIKit.framework */,
+				280511171C8034FD003A668E /* QuartzCore.framework */,
+				280511151C8034EC003A668E /* Foundation.framework */,
+				280511131C8034DF003A668E /* CoreGraphics.framework */,
+				280511111C8034CB003A668E /* SystemConfiguration.framework */,
+				2805110F1C8034BC003A668E /* CoreTelephony.framework */,
+				2805110D1C8034A5003A668E /* CoreFoundation.framework */,
+				2805110B1C803488003A668E /* Security.framework */,
 			);
 			path = lib;
 			sourceTree = "<group>";
@@ -302,6 +334,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PREFIX_HEADER = knbankmbr/source/PrefixHeader.pch;
 				INFOPLIST_FILE = knbankmbr/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.knbank.knbankmbr;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -317,6 +350,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PREFIX_HEADER = knbankmbr/source/PrefixHeader.pch;
 				INFOPLIST_FILE = knbankmbr/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.knbank.knbankmbr;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -343,6 +377,7 @@
 				280510F71C7FE9AE003A668E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
