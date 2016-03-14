@@ -17,6 +17,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+
+//gclee
+//#define Appdelegate (((AppDelegate *)[[UIApplication sharedApplication] delegate]))
+//#define Appdelegate ((AppDelegate *)[[UIApplication sharedApplication] delegate])
+//                  ^----------------------parenthesis--------------------------^
+    
+    
 }
 
 - (void)didReceiveMemoryWarning {
