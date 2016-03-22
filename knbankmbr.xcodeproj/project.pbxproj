@@ -25,6 +25,7 @@
 		28BDEFB21CA113EA009E0B7A /* location_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 28BDEFAF1CA113EA009E0B7A /* location_icon@2x.png */; };
 		28BDEFB31CA113EA009E0B7A /* location_icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 28BDEFB01CA113EA009E0B7A /* location_icon@3x.png */; };
 		28BDEFB61CA127CE009E0B7A /* UIImage+ImageWithColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 28BDEFB51CA127CE009E0B7A /* UIImage+ImageWithColor.m */; };
+		28BDEFBE1CA140B3009E0B7A /* quickMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28BDEFBD1CA140B3009E0B7A /* quickMenuViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +53,8 @@
 		28BDEFB01CA113EA009E0B7A /* location_icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "location_icon@3x.png"; sourceTree = "<group>"; };
 		28BDEFB41CA127CE009E0B7A /* UIImage+ImageWithColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageWithColor.h"; sourceTree = "<group>"; };
 		28BDEFB51CA127CE009E0B7A /* UIImage+ImageWithColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageWithColor.m"; sourceTree = "<group>"; };
+		28BDEFBC1CA140B3009E0B7A /* quickMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = quickMenuViewController.h; sourceTree = "<group>"; };
+		28BDEFBD1CA140B3009E0B7A /* quickMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = quickMenuViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +133,8 @@
 			children = (
 				2805110A1C800609003A668E /* PrefixHeader.pch */,
 				280510FC1C800109003A668E /* AppDelegate.h */,
+				28BDEFBC1CA140B3009E0B7A /* quickMenuViewController.h */,
+				28BDEFBD1CA140B3009E0B7A /* quickMenuViewController.m */,
 				280510FD1C800109003A668E /* AppDelegate.m */,
 				280510FE1C800109003A668E /* ViewController.h */,
 				280510FF1C800109003A668E /* ViewController.m */,
@@ -265,6 +270,7 @@
 				280511011C800109003A668E /* ViewController.m in Sources */,
 				28BDEFB61CA127CE009E0B7A /* UIImage+ImageWithColor.m in Sources */,
 				280511001C800109003A668E /* AppDelegate.m in Sources */,
+				28BDEFBE1CA140B3009E0B7A /* quickMenuViewController.m in Sources */,
 				280510E31C7FE9AE003A668E /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
