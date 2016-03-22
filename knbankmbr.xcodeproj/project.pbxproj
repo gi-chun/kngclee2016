@@ -21,6 +21,10 @@
 		280511161C8034EC003A668E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 280511151C8034EC003A668E /* Foundation.framework */; };
 		280511181C8034FD003A668E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 280511171C8034FD003A668E /* QuartzCore.framework */; };
 		2805111A1C803519003A668E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 280511191C803519003A668E /* UIKit.framework */; };
+		28BDEFB11CA113EA009E0B7A /* location_icon@1x.png in Resources */ = {isa = PBXBuildFile; fileRef = 28BDEFAE1CA113EA009E0B7A /* location_icon@1x.png */; };
+		28BDEFB21CA113EA009E0B7A /* location_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 28BDEFAF1CA113EA009E0B7A /* location_icon@2x.png */; };
+		28BDEFB31CA113EA009E0B7A /* location_icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 28BDEFB01CA113EA009E0B7A /* location_icon@3x.png */; };
+		28BDEFB61CA127CE009E0B7A /* UIImage+ImageWithColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 28BDEFB51CA127CE009E0B7A /* UIImage+ImageWithColor.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +47,11 @@
 		280511151C8034EC003A668E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		280511171C8034FD003A668E /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		280511191C803519003A668E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		28BDEFAE1CA113EA009E0B7A /* location_icon@1x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "location_icon@1x.png"; sourceTree = "<group>"; };
+		28BDEFAF1CA113EA009E0B7A /* location_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "location_icon@2x.png"; sourceTree = "<group>"; };
+		28BDEFB01CA113EA009E0B7A /* location_icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "location_icon@3x.png"; sourceTree = "<group>"; };
+		28BDEFB41CA127CE009E0B7A /* UIImage+ImageWithColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageWithColor.h"; sourceTree = "<group>"; };
+		28BDEFB51CA127CE009E0B7A /* UIImage+ImageWithColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageWithColor.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +133,8 @@
 				280510FD1C800109003A668E /* AppDelegate.m */,
 				280510FE1C800109003A668E /* ViewController.h */,
 				280510FF1C800109003A668E /* ViewController.m */,
+				28BDEFB41CA127CE009E0B7A /* UIImage+ImageWithColor.h */,
+				28BDEFB51CA127CE009E0B7A /* UIImage+ImageWithColor.m */,
 			);
 			path = source;
 			sourceTree = "<group>";
@@ -140,6 +151,7 @@
 		280511031C80042E003A668E /* image */ = {
 			isa = PBXGroup;
 			children = (
+				28BDEFAD1CA113EA009E0B7A /* other */,
 				280511041C80042E003A668E /* main */,
 			);
 			path = image;
@@ -159,6 +171,16 @@
 				280511071C80042E003A668E /* Main.storyboard */,
 			);
 			path = xibSource;
+			sourceTree = "<group>";
+		};
+		28BDEFAD1CA113EA009E0B7A /* other */ = {
+			isa = PBXGroup;
+			children = (
+				28BDEFAE1CA113EA009E0B7A /* location_icon@1x.png */,
+				28BDEFAF1CA113EA009E0B7A /* location_icon@2x.png */,
+				28BDEFB01CA113EA009E0B7A /* location_icon@3x.png */,
+			);
+			path = other;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -192,7 +214,7 @@
 				TargetAttributes = {
 					280510DD1C7FE9AE003A668E = {
 						CreatedOnToolsVersion = 7.2.1;
-						DevelopmentTeam = P9L9357GS6;
+						DevelopmentTeam = 75B9Q5T5XX;
 						SystemCapabilities = {
 							com.apple.Push = {
 								enabled = 0;
@@ -225,8 +247,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				280511091C80042E003A668E /* Main.storyboard in Resources */,
+				28BDEFB11CA113EA009E0B7A /* location_icon@1x.png in Resources */,
 				280510EE1C7FE9AE003A668E /* Assets.xcassets in Resources */,
+				28BDEFB21CA113EA009E0B7A /* location_icon@2x.png in Resources */,
 				280511081C80042E003A668E /* LaunchScreen.storyboard in Resources */,
+				28BDEFB31CA113EA009E0B7A /* location_icon@3x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -238,6 +263,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				280511011C800109003A668E /* ViewController.m in Sources */,
+				28BDEFB61CA127CE009E0B7A /* UIImage+ImageWithColor.m in Sources */,
 				280511001C800109003A668E /* AppDelegate.m in Sources */,
 				280510E31C7FE9AE003A668E /* main.m in Sources */,
 			);
@@ -336,7 +362,7 @@
 				INFOPLIST_FILE = knbankmbr/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.knbank.knbankmbr;
+				PRODUCT_BUNDLE_IDENTIFIER = com.knb.test101;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -352,7 +378,7 @@
 				INFOPLIST_FILE = knbankmbr/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.knbank.knbankmbr;
+				PRODUCT_BUNDLE_IDENTIFIER = com.knb.test101;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
