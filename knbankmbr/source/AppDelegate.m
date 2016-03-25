@@ -9,11 +9,13 @@
 #import "AppDelegate.h"
 #import "ViewController.h"
 #import "UIImage+ImageWithColor.h"
+#import "VCFloatingActionButton.h"
 
 @interface AppDelegate ()
 {
     UIView *shadow;
     UIButton *btnCompose;
+    VCFloatingActionButton *addButton;
 }
 @end
 
@@ -39,6 +41,21 @@
     
     self.window.rootViewController = mainViewCnr;
     
+    /////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    CGRect floatFrame = CGRectMake([UIScreen mainScreen].bounds.size.width - 44 - 20, [UIScreen mainScreen].bounds.size.height - 44 - 20, 44, 44);
+    addButton = [[VCFloatingActionButton alloc]initWithFrame:floatFrame normalImage:[UIImage imageNamed:@"plus"] andPressedImage:[UIImage imageNamed:@"cross"] withScrollview:nil];
+    addButton.imageArray = @[@"fb-icon",@"twitter-icon",@"google-icon",@"linkedin-icon",@"google-icon",@"linkedin-icon"];
+    addButton.labelArray = @[@"설정",@"고객센터",@"간편송금",@"인증센터", @"ATM출금", @"홈"];
+    
+    addButton.hideWhileScrolling = YES;
+    addButton.delegate = self;
+    
+    //[self.view addSubview:addButton];
+    [self.window addSubview:addButton];
+    
+    //[addButton setHidden:true];
+    
+    /////////////////////////////////////////////////////////////////////////////////////////////////////////////
     
     //create application main window - subview - global view
     
@@ -57,29 +74,29 @@
 //    [self.window addSubview:shadowView];
     
     ////////////////////////////////////////////////////////////////////////////////////////////////////
-    shadow = [[UIView alloc]init];
-    shadow.layer.cornerRadius = 5.0;
-    shadow.layer.shadowColor = [[UIColor redColor] CGColor];
-    shadow.layer.shadowOpacity = 1.0;
-    shadow.layer.shadowRadius = 10.0;
-    shadow.layer.shadowOffset = CGSizeMake(0.0f, -0.5f);
-    
-    btnCompose = [[UIButton alloc]initWithFrame:CGRectMake(kScreenBoundsWidth-80, kScreenBoundsHeight-80, 80, 80)];
-    [btnCompose setUserInteractionEnabled:YES];
-    btnCompose.layer.cornerRadius = 30;
-    btnCompose.layer.masksToBounds = YES;
-    [btnCompose setImage:[UIImage imageNamed:@"location_icon"] forState:UIControlStateNormal];
-    [btnCompose setBackgroundImage:[UIImage imageWithColor:UIColorFromRGB(0x000000)] forState:UIControlStateHighlighted];
-    
-    [btnCompose addTarget:self action:@selector(btnCompose_click:) forControlEvents:UIControlEventTouchUpInside];
-    [shadow addSubview:btnCompose];
-    [self.window addSubview:shadow];
-    
-    UIButton *btnEmpty = [UIButton buttonWithType:UIButtonTypeCustom];
-    [btnEmpty setFrame:CGRectMake(kScreenBoundsWidth-80, kScreenBoundsHeight-80, 80, 80)];
-    [btnEmpty setBackgroundColor:[UIColor clearColor]];
-    [btnEmpty addTarget:self action:@selector(btnCompose_click:) forControlEvents:UIControlEventTouchUpInside];
-    [self.window addSubview:btnEmpty];
+//    shadow = [[UIView alloc]init];
+//    shadow.layer.cornerRadius = 5.0;
+//    shadow.layer.shadowColor = [[UIColor redColor] CGColor];
+//    shadow.layer.shadowOpacity = 1.0;
+//    shadow.layer.shadowRadius = 10.0;
+//    shadow.layer.shadowOffset = CGSizeMake(0.0f, -0.5f);
+//    
+//    btnCompose = [[UIButton alloc]initWithFrame:CGRectMake(kScreenBoundsWidth-80, kScreenBoundsHeight-80, 80, 80)];
+//    [btnCompose setUserInteractionEnabled:YES];
+//    btnCompose.layer.cornerRadius = 30;
+//    btnCompose.layer.masksToBounds = YES;
+//    [btnCompose setImage:[UIImage imageNamed:@"location_icon"] forState:UIControlStateNormal];
+//    [btnCompose setBackgroundImage:[UIImage imageWithColor:UIColorFromRGB(0x000000)] forState:UIControlStateHighlighted];
+//    
+//    [btnCompose addTarget:self action:@selector(btnCompose_click:) forControlEvents:UIControlEventTouchUpInside];
+//    [shadow addSubview:btnCompose];
+//    [self.window addSubview:shadow];
+//    
+//    UIButton *btnEmpty = [UIButton buttonWithType:UIButtonTypeCustom];
+//    [btnEmpty setFrame:CGRectMake(kScreenBoundsWidth-80, kScreenBoundsHeight-80, 80, 80)];
+//    [btnEmpty setBackgroundColor:[UIColor clearColor]];
+//    [btnEmpty addTarget:self action:@selector(btnCompose_click:) forControlEvents:UIControlEventTouchUpInside];
+//    [self.window addSubview:btnEmpty];
     
     //[shadow setHidden:true];
     
@@ -135,6 +152,25 @@
     NSLog(@"친구 등록 실패: 권한이 없음");
 
 }
+
+#pragma mark - table
+-(void) didSelectMenuOptionAtIndex:(NSInteger)row
+{
+    NSLog(@"Floating action tapped index %tu",row);
+}
+
+#pragma mark - public
+-(void) showQuickButton:(NSInteger)isShow
+{
+    NSLog(@"show quick button %tu",isShow);
+    if(isShow == 1){
+        [addButton setHidden:true];
+    }else{
+        [addButton setHidden:false];
+    }
+}
+
+
 
 
 @end
