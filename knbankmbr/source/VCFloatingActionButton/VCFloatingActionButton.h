@@ -2,8 +2,8 @@
 //  VCFloatingActionButton.h
 //  starttrial
 //
-//  Created by Giridhar on 25/03/15.
-//  Copyright (c) 2015 Giridhar. All rights reserved.
+//  Created by gclee on 25/03/15.
+//  Copyright (c) 2015 gclee. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

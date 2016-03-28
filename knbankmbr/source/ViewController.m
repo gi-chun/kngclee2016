@@ -17,8 +17,66 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     // Do any additional setup after loading the view, typically from a nib.
+    
+    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    UIView *buttonContainer = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 80, 44)];
+    buttonContainer.backgroundColor = [UIColor clearColor];
+    UIToolbar *dummyBar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, 0, 80, 44)];
+    
+    UIBarButtonItem *b1 = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(doSomething:)];
+    
+    UIBarButtonItem *b2 = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(doSomething:)];
+    
+    NSArray *items = [[NSArray alloc] initWithObjects:b1, b2, nil];
+    
+    [dummyBar setItems:items];
+    
+    [buttonContainer addSubview:dummyBar];
+    
+    
+    //////////////////////////////
+    UIButton* buttonLeft = [UIButton buttonWithType:UIButtonTypeCustom];
+    [buttonLeft setImage:[UIImage imageNamed:@"linkedin-icon.png"] forState:UIControlStateNormal];
+    [buttonLeft setTitle:@"" forState:UIControlStateNormal];
+    [buttonLeft addTarget:self action:@selector(doSomething:)forControlEvents:UIControlEventTouchUpInside];
+    [buttonLeft sizeToFit];
+    buttonLeft.imageEdgeInsets = UIEdgeInsetsMake(0, -20, 0, 20);
+    
+    UIBarButtonItem* barButtonItemLeft = [[UIBarButtonItem alloc] initWithCustomView:buttonLeft];
+    self.navigationItem.leftBarButtonItem = barButtonItemLeft;
+    
+    UIButton* buttonRigth = [UIButton buttonWithType:UIButtonTypeCustom];
+    [buttonRigth setImage:[UIImage imageNamed:@"fb-icon.png"] forState:UIControlStateNormal];
+    [buttonRigth setTitle:@"" forState:UIControlStateNormal];
+    [buttonRigth addTarget:self action:@selector(doSomething:)forControlEvents:UIControlEventTouchUpInside];
+    [buttonRigth sizeToFit];
+    buttonRigth.imageEdgeInsets = UIEdgeInsetsMake(0, 20, 0, -20);
+    UIBarButtonItem* barButtonItemRight = [[UIBarButtonItem alloc] initWithCustomView:buttonRigth];
+    self.navigationItem.rightBarButtonItem = barButtonItemRight;
+    
+    /*
+     leftButton.imageEdgeInsets = UIEdgeInsetsMake(-2, 0, 0, 0);
+     */
+    
+    
+    ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+    //self.navigationItem.rightBarButtonItem = self.editButtonItem;
+//    
+//    UIBarButtonItem *shareItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:nil];
+//    
+//    UIBarButtonItem *cameraItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCamera target:self action:nil];
+//    
+//    NSArray *actionButtonItems = @[shareItem, cameraItem];
+//    self.navigationItem.rightBarButtonItems = actionButtonItems;
+    
+    // Uncomment to display a logo as the navigation bar title
+    // self.navigationItem.titleView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"appcoda-logo.png"]];
+    
+    self.title = @"BNK경남은행\n모바일영업점";
+    
 //gclee
 //#define Appdelegate (((AppDelegate *)[[UIApplication sharedApplication] delegate]))
 //#define Appdelegate ((AppDelegate *)[[UIApplication sharedApplication] delegate])
@@ -141,5 +199,11 @@
 //    [shadow addSubview:btnCompose];
 //    return shadow;
 //}
+
+#pragma mark - navigaton bar click
+-(void)doSomething:(id)sender
+{
+    NSLog(@"Button pushed");
+}
 
 @end
