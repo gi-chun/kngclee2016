@@ -96,19 +96,22 @@ CGFloat buttonToScreenHeight;
     [_buttonView addGestureRecognizer:buttonTap3];
     
     
-    UIBlurEffect *blur = [UIBlurEffect effectWithStyle:UIBlurEffectStyleDark];
+    UIBlurEffect *blur = [UIBlurEffect effectWithStyle:UIBlurEffectStyleLight];//UIBlurEffectStyleLight, UIBlurEffectStyleDark
     UIVisualEffectView *vsview = [[UIVisualEffectView alloc]initWithEffect:blur];
     
 
     _bgView = [[UIView alloc]initWithFrame:[UIScreen mainScreen].bounds];
-    _bgView.backgroundColor = [UIColor colorWithWhite:0 alpha:0.8];
+    
+//    _bgView.backgroundColor = [UIColor colorWithWhite:0 alpha:0.8];
+//    _bgView.alpha = 0;
+    _bgView.backgroundColor = [UIColor colorWithWhite:0 alpha:0.5];
     _bgView.alpha = 0;
     _bgView.userInteractionEnabled = YES;
     UITapGestureRecognizer *buttonTap2 = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(handleTap:)];
 
     buttonTap2.cancelsTouchesInView = NO;
     vsview.frame = _bgView.bounds;
-    _bgView = vsview;
+    //_bgView = vsview;
     [_bgView addGestureRecognizer:buttonTap2];
     
     
