@@ -50,7 +50,7 @@
     
 //    // set navigaton ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
     // Uncomment to change the background color of navigation bar
-    [[UINavigationBar appearance] setBarTintColor:UIColorFromRGB(0x067AB5)];
+    [[UINavigationBar appearance] setBarTintColor:UIColorFromRGBA(0x067AB5, 1.0)];
     // Uncomment to change the color of back button
     [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
     // Uncomment to assign a custom backgroung image
