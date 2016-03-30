@@ -21,6 +21,7 @@
 		280511161C8034EC003A668E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 280511151C8034EC003A668E /* Foundation.framework */; };
 		280511181C8034FD003A668E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 280511171C8034FD003A668E /* QuartzCore.framework */; };
 		2805111A1C803519003A668E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 280511191C803519003A668E /* UIKit.framework */; };
+		28092A961CABC74900BE312E /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28092A951CABC74900BE312E /* MenuViewController.m */; };
 		281B57581CAA146A00E6E81B /* CPTouchActionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 281B57571CAA146A00E6E81B /* CPTouchActionView.m */; };
 		281B575C1CAA1C0700E6E81B /* RegexKitLite.m in Sources */ = {isa = PBXBuildFile; fileRef = 281B575B1CAA1C0700E6E81B /* RegexKitLite.m */; };
 		281B575F1CAA1D9F00E6E81B /* NSString+URLEncodedString.m in Sources */ = {isa = PBXBuildFile; fileRef = 281B575E1CAA1D9F00E6E81B /* NSString+URLEncodedString.m */; };
@@ -63,6 +64,8 @@
 		280511151C8034EC003A668E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		280511171C8034FD003A668E /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		280511191C803519003A668E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		28092A941CABC74900BE312E /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
+		28092A951CABC74900BE312E /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
 		281B57561CAA146A00E6E81B /* CPTouchActionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPTouchActionView.h; sourceTree = "<group>"; };
 		281B57571CAA146A00E6E81B /* CPTouchActionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CPTouchActionView.m; sourceTree = "<group>"; };
 		281B575A1CAA1C0700E6E81B /* RegexKitLite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegexKitLite.h; sourceTree = "<group>"; };
@@ -176,6 +179,8 @@
 				280510FF1C800109003A668E /* ViewController.m */,
 				28BDEFB41CA127CE009E0B7A /* UIImage+ImageWithColor.h */,
 				28BDEFB51CA127CE009E0B7A /* UIImage+ImageWithColor.m */,
+				28092A941CABC74900BE312E /* MenuViewController.h */,
+				28092A951CABC74900BE312E /* MenuViewController.m */,
 			);
 			path = source;
 			sourceTree = "<group>";
@@ -356,6 +361,7 @@
 				288F59BD1CA51A7200D08F55 /* floatTableViewCell.m in Sources */,
 				280511001C800109003A668E /* AppDelegate.m in Sources */,
 				280510E31C7FE9AE003A668E /* main.m in Sources */,
+				28092A961CABC74900BE312E /* MenuViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
