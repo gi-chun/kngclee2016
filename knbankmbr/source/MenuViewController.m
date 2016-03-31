@@ -7,10 +7,11 @@
 //
 
 #import "MenuViewController.h"
+#import "CKMenuView.h"
 
-@interface MenuViewController ()
+@interface MenuViewController ()<CKMenuViewDelegate>
 {
-    
+    CKMenuView *menuView;
 }
 @end
 
@@ -52,8 +53,14 @@
 
 - (void)initLayout
 {
-//    [mainScrollView removeFromSuperview];
-//    
+    [menuView removeFromSuperview];
+    
+    //menu view
+    menuView = [[CKMenuView alloc] initWithFrame:self.view.bounds];
+    [menuView setDelegate:self];
+    [self.view addSubview:menuView];
+    
+//
 //    //메인 스크롤뷰
 //    mainScrollView = [[UIScrollView alloc] initWithFrame:self.view.bounds];
 //    [mainScrollView setBackgroundColor:[UIColor clearColor]];
@@ -115,6 +122,14 @@
 //    [self setMainScrollViewEnable:YES];
     
  }
+
+#pragma mark - MenuView Delegate Method
+
+- (void)touchDissmisView
+{
+    [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
+}
+
 
 @end
 

@@ -7,10 +7,13 @@
 //
 
 #import "ViewController.h"
+#import "MenuViewController.h"
 
 
 @interface ViewController ()
-
+{
+    
+}
 @end
 
 @implementation ViewController
@@ -204,6 +207,16 @@
 -(void)doSomething:(id)sender
 {
     NSLog(@"Button pushed");
+    
+    MenuViewController *viewController = [[MenuViewController alloc] init];
+    [viewController setDelegate:self];
+    
+    [self presentViewController:viewController animated:NO completion:nil];
+    
+//    MYDetailViewController *dvc = [[MYDetailViewController alloc] initWithNibName:@"MYDetailViewController" bundle:[NSBundle mainBundle]];
+//    [dvc setDelegate:self];
+//    [dvc setModalTransitionStyle:UIModalTransitionStyleFlipHorizontal];
+//    [self presentViewController:dvc animated:YES completion:nil];
 }
 
 @end

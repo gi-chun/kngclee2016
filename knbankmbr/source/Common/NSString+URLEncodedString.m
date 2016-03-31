@@ -7,7 +7,7 @@
 //
 
 #import "NSString+URLEncodedString.h"
-#import "RegexKitLite.h"
+//#import "RegexKitLite.h"
 
 @implementation NSString (URLEncodedString)
 
@@ -61,7 +61,8 @@
 {
     NSString *lowerStr = [self lowercaseString];
     
-    return ([lowerStr isMatchedByRegex:@"^http://.*"] || [lowerStr isMatchedByRegex:@"^https://.*"]);
+    //return ([lowerStr isMatchedByRegex:@"^http://.*"] || [lowerStr isMatchedByRegex:@"^https://.*"]);
+    return true;
 }
 
 - (NSString *) trim

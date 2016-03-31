@@ -100,6 +100,7 @@ CGFloat buttonToScreenHeight;
     UIVisualEffectView *vsview = [[UIVisualEffectView alloc]initWithEffect:blur];
     
 
+    //gclee
     _bgView = [[UIView alloc]initWithFrame:[UIScreen mainScreen].bounds];
     
 //    _bgView.backgroundColor = [UIColor colorWithWhite:0 alpha:0.8];
