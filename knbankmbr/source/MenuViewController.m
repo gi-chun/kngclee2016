@@ -11,6 +11,8 @@
 
 @interface MenuViewController ()<CKMenuViewDelegate>
 {
+    UIImage* parentScreenShot;
+    UIImageView *blurView;
     CKMenuView *menuView;
 }
 @end
@@ -21,7 +23,9 @@
     
     [super viewDidLoad];
     
-    [self.view setBackgroundColor:UIColorFromRGB(0xe3e3e8)];
+    //[self.view setBackgroundColor:UIColorFromRGB(0xe3e3e8)];
+//    [self.view setBackgroundColor:[UIColor clearColor]];
+//    [self.view setOpaque:NO];
     
     // iOS7 Layout
     if ([self respondsToSelector:@selector(edgesForExtendedLayout)]) {
@@ -54,9 +58,17 @@
 - (void)initLayout
 {
     [menuView removeFromSuperview];
+    [blurView removeFromSuperview];
+    
+    //blurview
+    blurView = [[UIImageView alloc]init];
+    [self.view addSubview:blurView];
+    [self createScreenshotwithComleteAction];
     
     //menu view
+//    CGRectMake(50, 0, kScreenBoundsWidth-50, kScreenBoundsHeight)];
     menuView = [[CKMenuView alloc] initWithFrame:self.view.bounds];
+//    menuView = [[CKMenuView alloc] initWithFrame:CGRectMake(50, 0, kScreenBoundsWidth-50, kScreenBoundsHeight)];
     [menuView setDelegate:self];
     [self.view addSubview:menuView];
     
@@ -129,6 +141,52 @@
 {
     [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
 }
+
+#pragma mark - screenshot
+
+-(void)createScreenshotwithComleteAction{
+    blurView.frame = self.view.bounds;
+    blurView.alpha = 0.0;
+//    UIImage * screenshot = nil;
+//    if ([self.parentViewController.view isKindOfClass:[UIScrollView class]]) {
+//        screenshot = [self screenShotOnScrolViewWithContentOffset:[(UIScrollView*)self.parentViewController.view contentOffset]];
+//    }else{
+//        screenshot = [self screenShot];
+//    }
+    blurView.image = parentScreenShot;
+    blurView.alpha = 1.0; //gclee original 1.0
+    
+}
+
+-(UIImage*)screenShot{
+    UIGraphicsBeginImageContext(self.view.bounds.size);
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    [self.view.layer renderInContext:context];
+    UIImage * screenImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    NSData * imageData = UIImageJPEGRepresentation(screenImage, SCREENSHOT_QUALITY);
+    screenImage = [UIImage imageWithData:imageData];
+    return screenImage;
+}
+
+-(UIImage*)screenShotOnScrolViewWithContentOffset:(CGPoint)offset{
+    UIGraphicsBeginImageContext(self.view.bounds.size);
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    CGContextTranslateCTM(context, -offset.x, -offset.y);
+    [self.view.layer renderInContext:context];
+    UIImage * screenImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    NSData * imageData = UIImageJPEGRepresentation(screenImage, SCREENSHOT_QUALITY);
+    screenImage = [UIImage imageWithData:imageData];
+    return screenImage;
+}
+
+- (void)setParentScreenShot:(UIImage *)aScreenShot{
+    
+    parentScreenShot = aScreenShot;
+    
+}
+
 
 
 @end

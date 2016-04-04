@@ -10,12 +10,16 @@
 #import "ViewController.h"
 #import "UIImage+ImageWithColor.h"
 #import "VCFloatingActionButton.h"
+#import "CKMenuView.h"
 
-@interface AppDelegate ()
+@interface AppDelegate ()<CKMenuViewDelegate>
 {
     UIView *shadow;
     UIButton *btnCompose;
     VCFloatingActionButton *addButton;
+    CKMenuView *menuView;
+    NSInteger *isShowedMenuView;
+    
 }
 @end
 
@@ -91,6 +95,19 @@
     //[addButton setHidden:true];
     
     /////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    // nemu vew
+//    menuView = [[CKMenuView alloc]initWithFrame:[UIScreen mainScreen].bounds];
+//    menuView.delegate = self;
+//    
+//    [self.window addSubview:menuView];
+//    [menuView setHidden:false];
+//    isShowedMenuView = 0;
+    /////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(showMenuView:)
+                                                 name:showMenuViewNotification
+                                               object:nil];
     
     //create application main window - subview - global view
     
@@ -204,6 +221,151 @@
         [addButton setHidden:false];
     }
 }
+
+-(void) showMenuView:(NSInteger)isShow
+{
+    NSLog(@"show Menu view %tu",isShow);
+    
+    if(isShowedMenuView){
+        isShowedMenuView = 0;
+        
+//        CGRect initalFrame = CGRectMake(0, 0, 0, menuView.frame.size.height);
+//        initalFrame.origin.x = -initalFrame.size.width;
+//        menuView.frame = initalFrame;
+//        [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(moveFromLeftOrRight:) userInfo:@1 repeats:NO];
+        
+//        CGRect frame = menuView.frame ;
+//        [UIView beginAnimations:nil context:nil];
+//        [UIView setAnimationDuration:5.0];
+//        [UIView setAnimationDelay:0];
+//        [UIView setAnimationCurve:UIViewAnimationCurveLinear];
+//        menuView.frame = CGRectMake(frame.origin.x - 2*frame.size.width,menuView.frame.origin.y, menuView.frame.size.width, menuView.frame.size.height);
+//        [UIView commitAnimations];
+        
+        [UIView animateWithDuration:0.7f
+                         animations:^ {
+                             CGRect frame = menuView.frame;
+                             frame.origin.x = 0;
+                             menuView.frame = frame;
+                             menuView.frame = CGRectMake(frame.origin.x - 2*frame.size.width,frame.origin.y, frame.size.width, frame.size.height);
+                             menuView.transform = CGAffineTransformScale(CGAffineTransformIdentity, 1.0, 1.0);
+                         }
+                         completion:^(BOOL finished) {
+                             
+                             [UIView beginAnimations:nil context:nil];
+                             [UIView setAnimationDuration:5.3];
+                             [UIView commitAnimations];
+                         }];
+
+        
+        //        [menuView setHidden:true];
+//        if (menuView) {
+//            for (UIView *subView in [menuView subviews]) {
+//                [subView removeFromSuperview];
+//            }
+//            
+//            [menuView removeFromSuperview];
+//            menuView = nil;
+//        }
+        
+    }
+    else{// 0
+        isShowedMenuView = 1;
+//        menuView = [[CKMenuView alloc]initWithFrame:CGRectMake(0,0,0,kScreenBoundsHeight)];
+        menuView = [[CKMenuView alloc]initWithFrame:[UIScreen mainScreen].bounds];
+        menuView.delegate = self;
+        [self.window addSubview:menuView];
+//        [menuView setHidden:false];
+        
+//        [UIView animateWithDuration:0.25f animations:^{
+//            [menuView setFrame:[UIScreen mainScreen].bounds];
+//        }];
+        
+//        [UIView animateWithDuration:0.7f
+//                         animations:^ {
+//                             CGRect frame = menuView.frame;
+//                             frame.origin.x = 0;
+//                             menuView.frame = frame;
+//                             menuView.transform = CGAffineTransformScale(CGAffineTransformIdentity, 1.0, 1.0);
+//                         }
+//                         completion:^(BOOL finished) {
+//                             
+//                             [UIView beginAnimations:nil context:nil];
+//                             [UIView setAnimationDuration:5.3];
+//                             [UIView commitAnimations];
+//                         }];
+//        
+//
+        CGRect initalFrame = menuView.frame;
+        initalFrame.origin.x = initalFrame.size.width;
+        menuView.frame = initalFrame;
+        [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(moveFromLeftOrRight:) userInfo:@0 repeats:NO];
+    }
+    
+    
+    
+    
+    /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    /*
+    
+    -(IBAction)rightClicked:(id)sender {
+        CGRect initalFrame = self.baseView.frame;
+        initalFrame.origin.x = initalFrame.size.width;
+        self.baseView.frame = initalFrame;
+        [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(moveFromLeftOrRight:) userInfo:@0 repeats:NO];
+    }
+    
+    -(IBAction)leftClicked:(id)sender {
+        CGRect initalFrame = self.baseView.frame;
+        initalFrame.origin.x = -initalFrame.size.width;
+        self.baseView.frame = initalFrame;
+        [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(moveFromLeftOrRight:) userInfo:@1 repeats:NO];
+    }
+    
+    -(void)moveFromLeftOrRight:(NSTimer *) timer {
+        BOOL isLeft = [timer.userInfo boolValue];
+        CGFloat bounceDistance = 10;
+        CGFloat bounceDuration = 0.2;
+        [UIView animateWithDuration:.2 delay:0.0 options:UIViewAnimationOptionAllowAnimatedContent
+                         animations:^{
+                             CGFloat direction = (isLeft ? 1 : -1);
+                             self.baseView.center = CGPointMake(self.baseView.frame.size.width/2 + direction*bounceDistance, self.baseView.center.y);}
+                         completion:^(BOOL finished){
+                             [UIView animateWithDuration:bounceDuration animations:^{
+                                 self.baseView.center = CGPointMake(self.baseView.frame.size.width/2, self.baseView.center.y);
+                             }];
+                         }];
+    }
+
+    
+    */
+    
+    
+    
+}
+
+#pragma mark - MenuView Delegate Method
+
+- (void)touchDissmisView
+{
+    [self showMenuView:0];
+}
+
+-(void)moveFromLeftOrRight:(NSTimer *) timer {
+    BOOL isLeft = [timer.userInfo boolValue];
+    CGFloat bounceDistance = 0; //10
+    CGFloat bounceDuration = 0.2;
+    [UIView animateWithDuration:.2 delay:0.0 options:UIViewAnimationOptionAllowAnimatedContent
+                     animations:^{
+                         CGFloat direction = (isLeft ? 1 : -1);
+                         menuView.center = CGPointMake(menuView.frame.size.width/2 + direction*bounceDistance, menuView.center.y);}
+                     completion:^(BOOL finished){
+                         [UIView animateWithDuration:bounceDuration animations:^{
+                             menuView.center = CGPointMake(menuView.frame.size.width/2, menuView.center.y);
+                         }];
+                     }];
+}
+
 
 
 

@@ -14,6 +14,8 @@
 
 @property (nonatomic, weak) id<MenuViewControllerDelegate> delegate;
 
+- (void)setParentScreenShot:(UIImage *)aScreenShot;
+
 @end
 
 @protocol MenuViewControllerDelegate <NSObject>

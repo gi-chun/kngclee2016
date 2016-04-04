@@ -12,7 +12,7 @@
 
 @interface ViewController ()
 {
-    
+    UIImage *screenshot;
 }
 @end
 
@@ -24,23 +24,24 @@
     // Do any additional setup after loading the view, typically from a nib.
     
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    UIView *buttonContainer = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 80, 44)];
-    buttonContainer.backgroundColor = [UIColor clearColor];
-    UIToolbar *dummyBar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, 0, 80, 44)];
-    
-    UIBarButtonItem *b1 = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(doSomething:)];
-    
-    UIBarButtonItem *b2 = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(doSomething:)];
-    
-    NSArray *items = [[NSArray alloc] initWithObjects:b1, b2, nil];
-    
-    [dummyBar setItems:items];
-    
-    [buttonContainer addSubview:dummyBar];
+//    UIView *buttonContainer = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 80, 44)];
+//    buttonContainer.backgroundColor = [UIColor clearColor];
+//    UIToolbar *dummyBar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, 0, 80, 44)];
+//    
+//    UIBarButtonItem *b1 = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(doSomething:)];
+//    
+//    UIBarButtonItem *b2 = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(doSomething:)];
+//    
+//    NSArray *items = [[NSArray alloc] initWithObjects:b1, b2, nil];
+//    
+//    [dummyBar setItems:items];
+//    
+//    [buttonContainer addSubview:dummyBar];
     
     
     //////////////////////////////
     UIButton* buttonLeft = [UIButton buttonWithType:UIButtonTypeCustom];
+    //[buttonLeft setFrame:CGRectMake(10, 10, 20, 20)];
     [buttonLeft setImage:[UIImage imageNamed:@"linkedin-icon.png"] forState:UIControlStateNormal];
     [buttonLeft setTitle:@"" forState:UIControlStateNormal];
     [buttonLeft addTarget:self action:@selector(doSomething:)forControlEvents:UIControlEventTouchUpInside];
@@ -79,6 +80,17 @@
     // self.navigationItem.titleView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"appcoda-logo.png"]];
     
     self.title = @"BNK경남은행\n모바일영업점";
+    
+    UILabel *updateTimeLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 100, 26)];
+    [updateTimeLabel setBackgroundColor:[UIColor clearColor]];
+    [updateTimeLabel setTextColor:UIColorFromRGB(0x8c6239)];
+    [updateTimeLabel setFont:[UIFont fontWithName:@"Helvetica-Bold" size:13]];
+    [updateTimeLabel setShadowColor:[UIColor whiteColor]];
+    [updateTimeLabel setShadowOffset:CGSizeMake(0,2)];
+    [updateTimeLabel setText:@"test test test gclee"];
+    [updateTimeLabel setTextAlignment:NSTextAlignmentCenter];
+    [self.view addSubview:updateTimeLabel];
+
     
 //gclee
 //#define Appdelegate (((AppDelegate *)[[UIApplication sharedApplication] delegate]))
@@ -208,15 +220,68 @@
 {
     NSLog(@"Button pushed");
     
-    MenuViewController *viewController = [[MenuViewController alloc] init];
-    [viewController setDelegate:self];
+    [[NSNotificationCenter defaultCenter] postNotificationName:showMenuViewNotification object:self];
     
-    [self presentViewController:viewController animated:NO completion:nil];
+    
+    //screenshot = [self screenShot];
+//    [self createScreenshotwithComleteAction:^{
+//        //self.definesPresentationContext = YES; //self is presenting view controller
+//        MenuViewController *viewController = [[MenuViewController alloc] init];
+//        [viewController setParentScreenShot:screenshot];
+//        [viewController setDelegate:self];
+//        //viewController.view.backgroundColor = [UIColor clearColor];
+//        
+//        //viewController.modalPresentationStyle = UIModalPresentationOverCurrentContext;
+//        [self presentViewController:viewController animated:NO completion:nil];
+//    }];
     
 //    MYDetailViewController *dvc = [[MYDetailViewController alloc] initWithNibName:@"MYDetailViewController" bundle:[NSBundle mainBundle]];
 //    [dvc setDelegate:self];
 //    [dvc setModalTransitionStyle:UIModalTransitionStyleFlipHorizontal];
 //    [self presentViewController:dvc animated:YES completion:nil];
 }
+
+#pragma mark - screenshot
+
+-(UIImage*)screenShot{
+    //UIGraphicsBeginImageContext(self.view.bounds.size);
+    UIGraphicsBeginImageContext([UIScreen mainScreen].bounds.size);
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    [self.view.layer renderInContext:context];
+    UIImage * screenImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    NSData * imageData = UIImageJPEGRepresentation(screenImage, SCREENSHOT_QUALITY);
+    screenImage = [UIImage imageWithData:imageData];
+    return screenImage;
+}
+
+-(UIImage*)screenShotOnScrolViewWithContentOffset:(CGPoint)offset{
+//    UIGraphicsBeginImageContext(self.view.bounds.size);
+    UIGraphicsBeginImageContext([UIScreen mainScreen].bounds.size);
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    CGContextTranslateCTM(context, -offset.x, -offset.y);
+    [self.view.layer renderInContext:context];
+    UIImage * screenImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    NSData * imageData = UIImageJPEGRepresentation(screenImage, SCREENSHOT_QUALITY);
+    screenImage = [UIImage imageWithData:imageData];
+    return screenImage;
+}
+
+-(void)createScreenshotwithComleteAction:(dispatch_block_t)completeAction{
+    
+    if ([self.view isKindOfClass:[UIScrollView class]]) {
+        screenshot = [self screenShotOnScrolViewWithContentOffset:[(UIScrollView*)self.view contentOffset]];
+    }else{
+        screenshot = [self screenShot];
+    }
+    
+    if (completeAction != nil) {
+        completeAction();
+    }
+}
+
+
+
 
 @end

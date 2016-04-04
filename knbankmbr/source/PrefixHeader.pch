@@ -48,6 +48,7 @@
 //#define TARGET_OS_IOS TARGET_OS_IPHONE
 //#endif
 
+#define SCREENSHOT_QUALITY  0.75
 
 #ifndef TARGET_OS_WATCH
 #define TARGET_OS_WATCH 0
@@ -55,6 +56,9 @@
 
 //string
 static NSString * SEND_PWD_MAIL_KO = @"회원님의 등록된 메일 주소로\n임시 비밀번호 메일을 전송 하였습니다.";
+
+//local noti
+static NSString * showMenuViewNotification = @"showMenuViewNotification";
 
 
 

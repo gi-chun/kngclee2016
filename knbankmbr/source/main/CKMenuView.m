@@ -35,6 +35,8 @@
     UIView *headerView;
     UIScrollView *leftVerticalView;
     UIScrollView *CenterHorizontalView;
+    
+    UIWindow *mainWindow;
 }
 
 @end
@@ -77,29 +79,31 @@
 
 - (void)initLayout
 {
-    //[self setBackgroundColor:[UIColor clearColor]];
-    //[self setBackgroundColor:[[UIColor blackColor] colorWithAlphaComponent:0.6]];
+//    [self setBackgroundColor:[UIColor clearColor]];
+    [self setBackgroundColor:[[UIColor blackColor] colorWithAlphaComponent:0.6]];
+    [self setOpaque:NO];
     
 //    UIView *containerView;
 //    UIView *headerView;
 //    UIScrollView *leftVerticalView;
 //    UIScrollView *CenterHorizontalView;
-
+    
+//    initWithFrame: CGRectMake(kScreenBoundsWidth-50, kScreenBoundsHeight-50, 50, 50)];
+//    mainWindow = [UIApplication sharedApplication].keyWindow;
+    
     backView = [[UIView alloc]initWithFrame:[UIScreen mainScreen].bounds];
-    
-//    backView.backgroundColor = [UIColor colorWithWhite:0 alpha:0.8]; //0.5
-    backView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.6];
-    
-    backView.alpha = 0.6;
-    
+    //backView = [[UIView alloc]initWithFrame:CGRectMake(50, 0, kScreenBoundsWidth-50, kScreenBoundsHeight)];
+    backView.backgroundColor = [UIColor clearColor];
     backView.userInteractionEnabled = YES;
+    backView.backgroundColor = [UIColor colorWithWhite:0 alpha:0.2];
+    backView.alpha = 0.2;
+    
     UITapGestureRecognizer *buttonTap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(handleTap:)];
     buttonTap.cancelsTouchesInView = NO;
     [backView addGestureRecognizer:buttonTap];
     [self addSubview:backView];
 
 //      containerView =
-    
     
 //    UIImage *backgroundImage = [[UIImage imageNamed:@"layer_pd_popup_bg.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(10, 10, 10, 10)];
 //    
