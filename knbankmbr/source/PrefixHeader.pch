@@ -48,6 +48,7 @@
 //#define TARGET_OS_IOS TARGET_OS_IPHONE
 //#endif
 
+#define SCREENSHOT_QUALITY  0.75
 
 #ifndef TARGET_OS_WATCH
 #define TARGET_OS_WATCH 0
@@ -56,10 +57,16 @@
 //string
 static NSString * SEND_PWD_MAIL_KO = @"회원님의 등록된 메일 주소로\n임시 비밀번호 메일을 전송 하였습니다.";
 
+//local noti
+static NSString * showMenuViewNotification = @"showMenuViewNotification";
 
 
+
+
+#define UIColorFromRGBA(rgbValue, alphaValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:alphaValue]
 
 #define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
+
 #define RGB(r, g, b) [UIColor colorWithRed:(float)r / 255.0 green:(float)g / 255.0 blue:(float)b / 255.0 alpha:1.0]
 #define RGBA(r, g, b, a) [UIColor colorWithRed:(float)r / 255.0 green:(float)g / 255.0 blue:(float)b / 255.0 alpha:a]
 
