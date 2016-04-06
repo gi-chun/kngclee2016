@@ -192,7 +192,7 @@
 				TargetAttributes = {
 					280510DD1C7FE9AE003A668E = {
 						CreatedOnToolsVersion = 7.2.1;
-						DevelopmentTeam = 75B9Q5T5XX;
+						DevelopmentTeam = P9L9357GS6;
 						SystemCapabilities = {
 							com.apple.Push = {
 								enabled = 0;
@@ -329,13 +329,14 @@
 		280510F61C7FE9AE003A668E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PREFIX_HEADER = knbankmbr/source/PrefixHeader.pch;
 				INFOPLIST_FILE = knbankmbr/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.knbank.test;
+				PRODUCT_BUNDLE_IDENTIFIER = com.knbank.knbankmbr;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -344,13 +345,14 @@
 		280510F71C7FE9AE003A668E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PREFIX_HEADER = knbankmbr/source/PrefixHeader.pch;
 				INFOPLIST_FILE = knbankmbr/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.knbank.test;
+				PRODUCT_BUNDLE_IDENTIFIER = com.knbank.knbankmbr;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
