@@ -242,31 +242,48 @@
 //        menuView.frame = CGRectMake(frame.origin.x - 2*frame.size.width,menuView.frame.origin.y, menuView.frame.size.width, menuView.frame.size.height);
 //        [UIView commitAnimations];
         
-        [UIView animateWithDuration:0.7f
+        [UIView animateWithDuration:0.4f
                          animations:^ {
                              CGRect frame = menuView.frame;
+                             
+// left to right
                              frame.origin.x = 0;
                              menuView.frame = frame;
-                             menuView.frame = CGRectMake(frame.origin.x - 2*frame.size.width,frame.origin.y, frame.size.width, frame.size.height);
+                             menuView.frame = CGRectMake(frame.origin.x + 2*frame.size.width,frame.origin.y, frame.size.width, frame.size.height);
+// right to left
+//                             frame.origin.x = 0;
+//                             menuView.frame = frame;
+//                             menuView.frame = CGRectMake(frame.origin.x - 2*frame.size.width,frame.origin.y, frame.size.width, frame.size.height);
+// top to buttom
+//                             frame.origin.y = 0;
+//                             menuView.frame = frame;
+//                             menuView.frame = CGRectMake(frame.origin.x , frame.origin.y + 2*frame.size.height, frame.size.width, frame.size.height);
+// buttom to top
+//                             frame.origin.y = 0;
+//                             menuView.frame = frame;
+//                             menuView.frame = CGRectMake(frame.origin.x , frame.origin.y - 2*frame.size.height, frame.size.width, frame.size.height);
+       
                              menuView.transform = CGAffineTransformScale(CGAffineTransformIdentity, 1.0, 1.0);
                          }
                          completion:^(BOOL finished) {
-                             
+                                
                              [UIView beginAnimations:nil context:nil];
                              [UIView setAnimationDuration:5.3];
                              [UIView commitAnimations];
+                             
+                             //        [menuView setHidden:true];
+                             if (menuView) {
+                                 for (UIView *subView in [menuView subviews]) {
+                                     [subView removeFromSuperview];
+                                 }
+                                 
+                                 [menuView removeFromSuperview];
+                                 menuView = nil;
+                             }
+
                          }];
 
         
-        //        [menuView setHidden:true];
-//        if (menuView) {
-//            for (UIView *subView in [menuView subviews]) {
-//                [subView removeFromSuperview];
-//            }
-//            
-//            [menuView removeFromSuperview];
-//            menuView = nil;
-//        }
         
     }
     else{// 0
@@ -277,25 +294,6 @@
         [self.window addSubview:menuView];
 //        [menuView setHidden:false];
         
-//        [UIView animateWithDuration:0.25f animations:^{
-//            [menuView setFrame:[UIScreen mainScreen].bounds];
-//        }];
-        
-//        [UIView animateWithDuration:0.7f
-//                         animations:^ {
-//                             CGRect frame = menuView.frame;
-//                             frame.origin.x = 0;
-//                             menuView.frame = frame;
-//                             menuView.transform = CGAffineTransformScale(CGAffineTransformIdentity, 1.0, 1.0);
-//                         }
-//                         completion:^(BOOL finished) {
-//                             
-//                             [UIView beginAnimations:nil context:nil];
-//                             [UIView setAnimationDuration:5.3];
-//                             [UIView commitAnimations];
-//                         }];
-//        
-//
         CGRect initalFrame = menuView.frame;
         initalFrame.origin.x = initalFrame.size.width;
         menuView.frame = initalFrame;
@@ -357,12 +355,17 @@
     CGFloat bounceDuration = 0.2;
     [UIView animateWithDuration:.2 delay:0.0 options:UIViewAnimationOptionAllowAnimatedContent
                      animations:^{
+                         //0:to left
+                         //1:to right
+                         //2:to top
+                         //3:to buttom
                          CGFloat direction = (isLeft ? 1 : -1);
                          menuView.center = CGPointMake(menuView.frame.size.width/2 + direction*bounceDistance, menuView.center.y);}
                      completion:^(BOOL finished){
                          [UIView animateWithDuration:bounceDuration animations:^{
                              menuView.center = CGPointMake(menuView.frame.size.width/2, menuView.center.y);
                          }];
+                         
                      }];
 }
 
