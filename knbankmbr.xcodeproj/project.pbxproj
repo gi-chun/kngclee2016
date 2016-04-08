@@ -38,6 +38,14 @@
 		28BDEFB21CA113EA009E0B7A /* location_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 28BDEFAF1CA113EA009E0B7A /* location_icon@2x.png */; };
 		28BDEFB31CA113EA009E0B7A /* location_icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 28BDEFB01CA113EA009E0B7A /* location_icon@3x.png */; };
 		28BDEFB61CA127CE009E0B7A /* UIImage+ImageWithColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 28BDEFB51CA127CE009E0B7A /* UIImage+ImageWithColor.m */; };
+		28D3DF341CB7888800173CB1 /* INISAFE_CMP_for_C_v3.4.2_iOS_8.1_Universal.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 28D3DF2C1CB7888800173CB1 /* INISAFE_CMP_for_C_v3.4.2_iOS_8.1_Universal.a */; };
+		28D3DF351CB7888800173CB1 /* INISAFE_Core_for_C_v2.4.0_iOS_8.1_Universal.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 28D3DF2D1CB7888800173CB1 /* INISAFE_Core_for_C_v2.4.0_iOS_8.1_Universal.a */; };
+		28D3DF361CB7888800173CB1 /* INISAFE_Sign_for_C_v4.4.0_iOS_8.1_Universal.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 28D3DF2E1CB7888800173CB1 /* INISAFE_Sign_for_C_v4.4.0_iOS_8.1_Universal.a */; };
+		28D3DF371CB7888800173CB1 /* INISAFE_Sign_for_C_v4.4.0_iOS_8.1d_Universal.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 28D3DF2F1CB7888800173CB1 /* INISAFE_Sign_for_C_v4.4.0_iOS_8.1d_Universal.a */; };
+		28D3DF381CB7888800173CB1 /* INISAFE_XSafe_for_C_v1.7.4_iOS_8.4_Universal.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 28D3DF301CB7888800173CB1 /* INISAFE_XSafe_for_C_v1.7.4_iOS_8.4_Universal.a */; };
+		28D3DF391CB7888800173CB1 /* INISAFE_XSafe_for_C_v1.7.4_iOS_8.4d_Universal.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 28D3DF311CB7888800173CB1 /* INISAFE_XSafe_for_C_v1.7.4_iOS_8.4d_Universal.a */; };
+		28D3DF3A1CB7888800173CB1 /* libINISAFE_Crypto_for_C_v5.2.0_iOS_8.1.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 28D3DF321CB7888800173CB1 /* libINISAFE_Crypto_for_C_v5.2.0_iOS_8.1.a */; };
+		28D3DF3B1CB7888800173CB1 /* libINISAFE_PKI_for_C_v5.2.1_iOS_8.1.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 28D3DF331CB7888800173CB1 /* libINISAFE_PKI_for_C_v5.2.1_iOS_8.1.a */; };
 		28F5BA5D1CA9043100D0A8F6 /* nav_bg_ios7.png in Resources */ = {isa = PBXBuildFile; fileRef = 28F5BA5B1CA9043100D0A8F6 /* nav_bg_ios7.png */; };
 		28F5BA5E1CA9043100D0A8F6 /* nav_bg_ios7@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 28F5BA5C1CA9043100D0A8F6 /* nav_bg_ios7@2x.png */; };
 		28F5BA611CA906E500D0A8F6 /* back_btn.png in Resources */ = {isa = PBXBuildFile; fileRef = 28F5BA5F1CA906E500D0A8F6 /* back_btn.png */; };
@@ -88,6 +96,16 @@
 		28BDEFB01CA113EA009E0B7A /* location_icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "location_icon@3x.png"; sourceTree = "<group>"; };
 		28BDEFB41CA127CE009E0B7A /* UIImage+ImageWithColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageWithColor.h"; sourceTree = "<group>"; };
 		28BDEFB51CA127CE009E0B7A /* UIImage+ImageWithColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageWithColor.m"; sourceTree = "<group>"; };
+		28D3DF2C1CB7888800173CB1 /* INISAFE_CMP_for_C_v3.4.2_iOS_8.1_Universal.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = INISAFE_CMP_for_C_v3.4.2_iOS_8.1_Universal.a; sourceTree = "<group>"; };
+		28D3DF2D1CB7888800173CB1 /* INISAFE_Core_for_C_v2.4.0_iOS_8.1_Universal.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = INISAFE_Core_for_C_v2.4.0_iOS_8.1_Universal.a; sourceTree = "<group>"; };
+		28D3DF2E1CB7888800173CB1 /* INISAFE_Sign_for_C_v4.4.0_iOS_8.1_Universal.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = INISAFE_Sign_for_C_v4.4.0_iOS_8.1_Universal.a; sourceTree = "<group>"; };
+		28D3DF2F1CB7888800173CB1 /* INISAFE_Sign_for_C_v4.4.0_iOS_8.1d_Universal.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = INISAFE_Sign_for_C_v4.4.0_iOS_8.1d_Universal.a; sourceTree = "<group>"; };
+		28D3DF301CB7888800173CB1 /* INISAFE_XSafe_for_C_v1.7.4_iOS_8.4_Universal.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = INISAFE_XSafe_for_C_v1.7.4_iOS_8.4_Universal.a; sourceTree = "<group>"; };
+		28D3DF311CB7888800173CB1 /* INISAFE_XSafe_for_C_v1.7.4_iOS_8.4d_Universal.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = INISAFE_XSafe_for_C_v1.7.4_iOS_8.4d_Universal.a; sourceTree = "<group>"; };
+		28D3DF321CB7888800173CB1 /* libINISAFE_Crypto_for_C_v5.2.0_iOS_8.1.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libINISAFE_Crypto_for_C_v5.2.0_iOS_8.1.a; sourceTree = "<group>"; };
+		28D3DF331CB7888800173CB1 /* libINISAFE_PKI_for_C_v5.2.1_iOS_8.1.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libINISAFE_PKI_for_C_v5.2.1_iOS_8.1.a; sourceTree = "<group>"; };
+		28D3DF3C1CB7907600173CB1 /* INISAFESign.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = INISAFESign.h; sourceTree = "<group>"; };
+		28D3DF3D1CB7907600173CB1 /* INISAFEXSafe.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = INISAFEXSafe.h; sourceTree = "<group>"; };
 		28F5BA5B1CA9043100D0A8F6 /* nav_bg_ios7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nav_bg_ios7.png; sourceTree = "<group>"; };
 		28F5BA5C1CA9043100D0A8F6 /* nav_bg_ios7@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nav_bg_ios7@2x.png"; sourceTree = "<group>"; };
 		28F5BA5F1CA906E500D0A8F6 /* back_btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back_btn.png; sourceTree = "<group>"; };
@@ -99,14 +117,22 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				28D3DF341CB7888800173CB1 /* INISAFE_CMP_for_C_v3.4.2_iOS_8.1_Universal.a in Frameworks */,
 				2805111A1C803519003A668E /* UIKit.framework in Frameworks */,
 				280511181C8034FD003A668E /* QuartzCore.framework in Frameworks */,
 				280511161C8034EC003A668E /* Foundation.framework in Frameworks */,
+				28D3DF351CB7888800173CB1 /* INISAFE_Core_for_C_v2.4.0_iOS_8.1_Universal.a in Frameworks */,
+				28D3DF371CB7888800173CB1 /* INISAFE_Sign_for_C_v4.4.0_iOS_8.1d_Universal.a in Frameworks */,
 				280511141C8034DF003A668E /* CoreGraphics.framework in Frameworks */,
 				280511121C8034CB003A668E /* SystemConfiguration.framework in Frameworks */,
 				280511101C8034BC003A668E /* CoreTelephony.framework in Frameworks */,
+				28D3DF381CB7888800173CB1 /* INISAFE_XSafe_for_C_v1.7.4_iOS_8.4_Universal.a in Frameworks */,
 				2805110E1C8034A5003A668E /* CoreFoundation.framework in Frameworks */,
 				2805110C1C803488003A668E /* Security.framework in Frameworks */,
+				28D3DF361CB7888800173CB1 /* INISAFE_Sign_for_C_v4.4.0_iOS_8.1_Universal.a in Frameworks */,
+				28D3DF391CB7888800173CB1 /* INISAFE_XSafe_for_C_v1.7.4_iOS_8.4d_Universal.a in Frameworks */,
+				28D3DF3B1CB7888800173CB1 /* libINISAFE_PKI_for_C_v5.2.1_iOS_8.1.a in Frameworks */,
+				28D3DF3A1CB7888800173CB1 /* libINISAFE_Crypto_for_C_v5.2.0_iOS_8.1.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -143,6 +169,7 @@
 		280510E01C7FE9AE003A668E /* knbankmbr */ = {
 			isa = PBXGroup;
 			children = (
+				28D3DF2B1CB7888800173CB1 /* externLib */,
 				280511021C80042E003A668E /* resource */,
 				280510FB1C800109003A668E /* source */,
 				280510FA1C7FFEFB003A668E /* lib */,
@@ -242,6 +269,8 @@
 		281B57591CAA1C0700E6E81B /* External */ = {
 			isa = PBXGroup;
 			children = (
+				28D3DF3C1CB7907600173CB1 /* INISAFESign.h */,
+				28D3DF3D1CB7907600173CB1 /* INISAFEXSafe.h */,
 				281B575D1CAA1D9F00E6E81B /* NSString+URLEncodedString.h */,
 				281B575E1CAA1D9F00E6E81B /* NSString+URLEncodedString.m */,
 			);
@@ -268,6 +297,21 @@
 				28BDEFB01CA113EA009E0B7A /* location_icon@3x.png */,
 			);
 			path = other;
+			sourceTree = "<group>";
+		};
+		28D3DF2B1CB7888800173CB1 /* externLib */ = {
+			isa = PBXGroup;
+			children = (
+				28D3DF2C1CB7888800173CB1 /* INISAFE_CMP_for_C_v3.4.2_iOS_8.1_Universal.a */,
+				28D3DF2D1CB7888800173CB1 /* INISAFE_Core_for_C_v2.4.0_iOS_8.1_Universal.a */,
+				28D3DF2E1CB7888800173CB1 /* INISAFE_Sign_for_C_v4.4.0_iOS_8.1_Universal.a */,
+				28D3DF2F1CB7888800173CB1 /* INISAFE_Sign_for_C_v4.4.0_iOS_8.1d_Universal.a */,
+				28D3DF301CB7888800173CB1 /* INISAFE_XSafe_for_C_v1.7.4_iOS_8.4_Universal.a */,
+				28D3DF311CB7888800173CB1 /* INISAFE_XSafe_for_C_v1.7.4_iOS_8.4d_Universal.a */,
+				28D3DF321CB7888800173CB1 /* libINISAFE_Crypto_for_C_v5.2.0_iOS_8.1.a */,
+				28D3DF331CB7888800173CB1 /* libINISAFE_PKI_for_C_v5.2.1_iOS_8.1.a */,
+			);
+			path = externLib;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -466,6 +510,10 @@
 				INFOPLIST_FILE = knbankmbr/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/knbankmbr/externLib",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.knb.test101;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -482,6 +530,10 @@
 				INFOPLIST_FILE = knbankmbr/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/knbankmbr/externLib",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.knb.test101;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
