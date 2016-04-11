@@ -9,6 +9,11 @@
 #import "ViewController.h"
 #import "MenuViewController.h"
 
+typedef NS_ENUM(NSUInteger, MenuTags) {
+    MenuLogin = 0,
+    MenuTotal
+};
+
 
 @interface ViewController ()
 {
@@ -47,6 +52,7 @@
     [buttonLeft addTarget:self action:@selector(doSomething:)forControlEvents:UIControlEventTouchUpInside];
     [buttonLeft sizeToFit];
     buttonLeft.imageEdgeInsets = UIEdgeInsetsMake(0, -20, 0, 20);
+    [buttonLeft setTag:MenuLogin];
     
     UIBarButtonItem* barButtonItemLeft = [[UIBarButtonItem alloc] initWithCustomView:buttonLeft];
     self.navigationItem.leftBarButtonItem = barButtonItemLeft;
@@ -56,6 +62,7 @@
     [buttonRigth setTitle:@"" forState:UIControlStateNormal];
     [buttonRigth addTarget:self action:@selector(doSomething:)forControlEvents:UIControlEventTouchUpInside];
     [buttonRigth sizeToFit];
+    [buttonLeft setTag:MenuTotal];
     buttonRigth.imageEdgeInsets = UIEdgeInsetsMake(0, 20, 0, -20);
     UIBarButtonItem* barButtonItemRight = [[UIBarButtonItem alloc] initWithCustomView:buttonRigth];
     self.navigationItem.rightBarButtonItem = barButtonItemRight;
@@ -220,7 +227,15 @@
 {
     NSLog(@"Button pushed");
     
-    [[NSNotificationCenter defaultCenter] postNotificationName:showMenuViewNotification object:self];
+    UIButton *button = (UIButton *)sender;
+    
+    if(button.tag == MenuLogin){
+        [[NSNotificationCenter defaultCenter] postNotificationName:showMenuViewNotification object:self];
+    }
+    else if(button.tag = MenuTotal){
+        
+        [[NSNotificationCenter defaultCenter] postNotificationName:showMenuViewNotification object:self];
+    }
     
     
     //screenshot = [self screenShot];

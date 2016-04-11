@@ -145,6 +145,7 @@
 
 -(void)handleTap:(id)sender //close view
 {
+    
     [self.delegate touchDissmisView];
 }
 
