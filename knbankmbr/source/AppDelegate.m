@@ -11,14 +11,18 @@
 #import "UIImage+ImageWithColor.h"
 #import "VCFloatingActionButton.h"
 #import "CKMenuView.h"
+#import "CKCommonAlert.h"
 
-@interface AppDelegate ()<CKMenuViewDelegate>
+@interface AppDelegate ()<CKMenuViewDelegate,
+                        CKCommonAlertDelegate>
 {
     UIView *shadow;
     UIButton *btnCompose;
     VCFloatingActionButton *addButton;
     CKMenuView *menuView;
+    CKCommonAlert *commonAlertView;
     NSInteger *isShowedMenuView;
+    NSInteger *isShowedAlertView;
     
 }
 @end
@@ -227,7 +231,7 @@
     NSLog(@"show Menu view %tu",isShow);
     
     if(isShowedMenuView){
-        isShowedMenuView = 0;
+        isShowedMenuView = commonHide;
         
 //        CGRect initalFrame = CGRectMake(0, 0, 0, menuView.frame.size.height);
 //        initalFrame.origin.x = -initalFrame.size.width;
@@ -287,7 +291,7 @@
         
     }
     else{// 0
-        isShowedMenuView = 1;
+        isShowedMenuView = commonShow;
 //        menuView = [[CKMenuView alloc]initWithFrame:CGRectMake(0,0,0,kScreenBoundsHeight)];
         menuView = [[CKMenuView alloc]initWithFrame:[UIScreen mainScreen].bounds];
         menuView.delegate = self;
@@ -299,9 +303,6 @@
         menuView.frame = initalFrame;
         [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(moveFromLeftOrRight:) userInfo:@0 repeats:NO];
     }
-    
-    
-    
     
     /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     /*
@@ -342,6 +343,61 @@
     
 }
 
+-(void) hideAlertView:(NSInteger)isShow
+{
+    NSLog(@"show common Alert view %tu",isShow);
+    
+    if(isShowedAlertView){
+        isShowedAlertView = commonHide;
+       
+        [UIView animateWithDuration:0.4f
+                         animations:^ {
+                             CGRect frame = commonAlertView.frame;
+                             // left to right
+                             frame.origin.x = 0;
+                             commonAlertView.frame = frame;
+                             commonAlertView.frame = CGRectMake(frame.origin.x + 2*frame.size.width,frame.origin.y, frame.size.width, frame.size.height);
+                             commonAlertView.transform = CGAffineTransformScale(CGAffineTransformIdentity, 1.0, 1.0);
+                         }
+                         completion:^(BOOL finished) {
+                             
+                             [UIView beginAnimations:nil context:nil];
+                             [UIView setAnimationDuration:5.3];
+                             [UIView commitAnimations];
+                             
+                             //        [menuView setHidden:true];
+                             if (commonAlertView) {
+                                 for (UIView *subView in [commonAlertView subviews]) {
+                                     [subView removeFromSuperview];
+                                 }
+                                 
+                                 [commonAlertView removeFromSuperview];
+                                 commonAlertView = nil;
+                             }
+                             
+                         }];
+        
+    }
+    else{// 0
+        isShowedAlertView = commonShow;
+        commonAlertView = [[CKMenuView alloc]initWithFrame:[UIScreen mainScreen].bounds];
+        commonAlertView.delegate = self;
+        [self.window addSubview:commonAlertView];
+        
+        CGRect initalFrame = commonAlertView.frame;
+        initalFrame.origin.x = initalFrame.size.width;
+        commonAlertView.frame = initalFrame;
+        [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(moveCommonAlert) userInfo:@0 repeats:NO];
+    }
+}
+
+#pragma mark - CommonAlert Delegate Method
+
+- (void)touchAlertDissmisView
+{
+    [self hideAlertView:0];
+}
+
 #pragma mark - MenuView Delegate Method
 
 - (void)touchDissmisView
@@ -364,6 +420,26 @@
                      completion:^(BOOL finished){
                          [UIView animateWithDuration:bounceDuration animations:^{
                              menuView.center = CGPointMake(menuView.frame.size.width/2, menuView.center.y);
+                         }];
+                         
+                     }];
+}
+
+-(void)moveCommonAlert:(NSTimer *) timer {
+    BOOL isLeft = [timer.userInfo boolValue];
+    CGFloat bounceDistance = 0; //10
+    CGFloat bounceDuration = 0.2;
+    [UIView animateWithDuration:.2 delay:0.0 options:UIViewAnimationOptionAllowAnimatedContent
+                     animations:^{
+                         //0:to left
+                         //1:to right
+                         //2:to top
+                         //3:to buttom
+                         CGFloat direction = (isLeft ? 1 : -1);
+                         commonAlertView.center = CGPointMake(commonAlertView.frame.size.width/2 + direction*bounceDistance, commonAlertView.center.y);}
+                     completion:^(BOOL finished){
+                         [UIView animateWithDuration:bounceDuration animations:^{
+                             commonAlertView.center = CGPointMake(commonAlertView.frame.size.width/2, commonAlertView.center.y);
                          }];
                          
                      }];

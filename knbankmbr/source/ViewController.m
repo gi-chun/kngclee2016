@@ -234,6 +234,8 @@ typedef NS_ENUM(NSUInteger, MenuTags) {
     }
     else if(button.tag = MenuTotal){
         
+        // gclee
+        //[[NSNotificationCenter defaultCenter] postNotificationName:showMenuViewNotification object:self];
         [[NSNotificationCenter defaultCenter] postNotificationName:showMenuViewNotification object:self];
     }
     

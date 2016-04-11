@@ -60,6 +60,12 @@ static NSString * SEND_PWD_MAIL_KO = @"회원님의 등록된 메일 주소로\n
 //local noti
 static NSString * showMenuViewNotification = @"showMenuViewNotification";
 
+typedef NS_ENUM(NSUInteger, CommonShowedFlag) {
+    commonHide = 0,
+    commonShow
+};
+
+
 
 
 

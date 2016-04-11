@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		280224F71CBB6EF700520DAB /* CKCommonAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = 280224F61CBB6EF700520DAB /* CKCommonAlert.m */; };
 		2804329A1CACBC33001B7084 /* CKMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 280432991CACBC33001B7084 /* CKMenuView.m */; };
 		280510E31C7FE9AE003A668E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 280510E21C7FE9AE003A668E /* main.m */; };
 		280510EE1C7FE9AE003A668E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 280510ED1C7FE9AE003A668E /* Assets.xcassets */; };
@@ -53,6 +54,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		280224F51CBB6EF700520DAB /* CKCommonAlert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CKCommonAlert.h; path = main/CKCommonAlert.h; sourceTree = "<group>"; };
+		280224F61CBB6EF700520DAB /* CKCommonAlert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CKCommonAlert.m; path = main/CKCommonAlert.m; sourceTree = "<group>"; };
 		280432981CACBC33001B7084 /* CKMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CKMenuView.h; path = main/CKMenuView.h; sourceTree = "<group>"; };
 		280432991CACBC33001B7084 /* CKMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CKMenuView.m; path = main/CKMenuView.m; sourceTree = "<group>"; };
 		280510DE1C7FE9AE003A668E /* knbankmbr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = knbankmbr.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -144,6 +147,8 @@
 			children = (
 				28092A941CABC74900BE312E /* MenuViewController.h */,
 				28092A951CABC74900BE312E /* MenuViewController.m */,
+				280224F51CBB6EF700520DAB /* CKCommonAlert.h */,
+				280224F61CBB6EF700520DAB /* CKCommonAlert.m */,
 				280432981CACBC33001B7084 /* CKMenuView.h */,
 				280432991CACBC33001B7084 /* CKMenuView.m */,
 			);
@@ -404,6 +409,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				280224F71CBB6EF700520DAB /* CKCommonAlert.m in Sources */,
 				288F59BF1CA51A7200D08F55 /* VCFloatingActionButton.m in Sources */,
 				281B57581CAA146A00E6E81B /* CPTouchActionView.m in Sources */,
 				280511011C800109003A668E /* ViewController.m in Sources */,
