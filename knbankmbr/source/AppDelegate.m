@@ -106,12 +106,22 @@
 //    [self.window addSubview:menuView];
 //    [menuView setHidden:false];
 //    isShowedMenuView = 0;
+    
+    isShowedMenuView = commonHide;
+    isShowedAlertView = commonHide;
     /////////////////////////////////////////////////////////////////////////////////////////////////////////////
     
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(showMenuView:)
                                                  name:showMenuViewNotification
                                                object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(hideAlertView:)
+                                                 name:showCommonAlertViewNotification
+                                               object:nil];
+    
+    
     
     //create application main window - subview - global view
     
@@ -350,44 +360,53 @@
     if(isShowedAlertView){
         isShowedAlertView = commonHide;
        
-        [UIView animateWithDuration:0.4f
-                         animations:^ {
-                             CGRect frame = commonAlertView.frame;
-                             // left to right
-                             frame.origin.x = 0;
-                             commonAlertView.frame = frame;
-                             commonAlertView.frame = CGRectMake(frame.origin.x + 2*frame.size.width,frame.origin.y, frame.size.width, frame.size.height);
-                             commonAlertView.transform = CGAffineTransformScale(CGAffineTransformIdentity, 1.0, 1.0);
-                         }
-                         completion:^(BOOL finished) {
-                             
-                             [UIView beginAnimations:nil context:nil];
-                             [UIView setAnimationDuration:5.3];
-                             [UIView commitAnimations];
-                             
-                             //        [menuView setHidden:true];
-                             if (commonAlertView) {
-                                 for (UIView *subView in [commonAlertView subviews]) {
-                                     [subView removeFromSuperview];
-                                 }
-                                 
-                                 [commonAlertView removeFromSuperview];
-                                 commonAlertView = nil;
-                             }
-                             
-                         }];
+//        [UIView animateWithDuration:0.4f
+//                         animations:^ {
+//                             CGRect frame = commonAlertView.frame;
+//                             // left to right
+//                             frame.origin.x = 0;
+//                             commonAlertView.frame = frame;
+//                             commonAlertView.frame = CGRectMake(frame.origin.x + 2*frame.size.width,frame.origin.y, frame.size.width, frame.size.height);
+//                             commonAlertView.transform = CGAffineTransformScale(CGAffineTransformIdentity, 1.0, 1.0);
+//                         }
+//                         completion:^(BOOL finished) {
+//                             
+//                             [UIView beginAnimations:nil context:nil];
+//                             [UIView setAnimationDuration:5.3];
+//                             [UIView commitAnimations];
+//                             
+//                             //        [menuView setHidden:true];
+//                             if (commonAlertView) {
+//                                 for (UIView *subView in [commonAlertView subviews]) {
+//                                     [subView removeFromSuperview];
+//                                 }
+//                                 
+//                                 [commonAlertView removeFromSuperview];
+//                                 commonAlertView = nil;
+//                             }
+//                             
+//                         }];
+        
+        if (commonAlertView) {
+            for (UIView *subView in [commonAlertView subviews]) {
+                [subView removeFromSuperview];
+            }
+            
+            [commonAlertView removeFromSuperview];
+            commonAlertView = nil;
+        }
         
     }
     else{// 0
         isShowedAlertView = commonShow;
-        commonAlertView = [[CKMenuView alloc]initWithFrame:[UIScreen mainScreen].bounds];
+        commonAlertView = [[CKCommonAlert alloc]initWithFrame:[UIScreen mainScreen].bounds];
         commonAlertView.delegate = self;
         [self.window addSubview:commonAlertView];
         
-        CGRect initalFrame = commonAlertView.frame;
-        initalFrame.origin.x = initalFrame.size.width;
-        commonAlertView.frame = initalFrame;
-        [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(moveCommonAlert) userInfo:@0 repeats:NO];
+//        CGRect initalFrame = commonAlertView.frame;
+//        initalFrame.origin.x = initalFrame.size.width;
+//        commonAlertView.frame = initalFrame;
+//        [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(moveCommonAlert:) userInfo:@0 repeats:NO];
     }
 }
 

@@ -43,14 +43,14 @@ typedef NS_ENUM(NSUInteger, MenuTags) {
 //    
 //    [buttonContainer addSubview:dummyBar];
     
-    
+    CGFloat xMargin = 30.0f;
     //////////////////////////////
     UIButton* buttonLeft = [UIButton buttonWithType:UIButtonTypeCustom];
-    //[buttonLeft setFrame:CGRectMake(10, 10, 20, 20)];
+    [buttonLeft setFrame:CGRectMake(xMargin, 10, 50, 50)];
     [buttonLeft setImage:[UIImage imageNamed:@"linkedin-icon.png"] forState:UIControlStateNormal];
     [buttonLeft setTitle:@"" forState:UIControlStateNormal];
     [buttonLeft addTarget:self action:@selector(doSomething:)forControlEvents:UIControlEventTouchUpInside];
-    [buttonLeft sizeToFit];
+    //[buttonLeft sizeToFit];
     buttonLeft.imageEdgeInsets = UIEdgeInsetsMake(0, -20, 0, 20);
     [buttonLeft setTag:MenuLogin];
     
@@ -58,11 +58,12 @@ typedef NS_ENUM(NSUInteger, MenuTags) {
     self.navigationItem.leftBarButtonItem = barButtonItemLeft;
     
     UIButton* buttonRigth = [UIButton buttonWithType:UIButtonTypeCustom];
+    [buttonRigth setFrame:CGRectMake(kScreenBoundsWidth-xMargin-50, 10, 50, 50)];
     [buttonRigth setImage:[UIImage imageNamed:@"fb-icon.png"] forState:UIControlStateNormal];
     [buttonRigth setTitle:@"" forState:UIControlStateNormal];
     [buttonRigth addTarget:self action:@selector(doSomething:)forControlEvents:UIControlEventTouchUpInside];
-    [buttonRigth sizeToFit];
-    [buttonLeft setTag:MenuTotal];
+    //[buttonRigth sizeToFit];
+    [buttonRigth setTag:MenuTotal];
     buttonRigth.imageEdgeInsets = UIEdgeInsetsMake(0, 20, 0, -20);
     UIBarButtonItem* barButtonItemRight = [[UIBarButtonItem alloc] initWithCustomView:buttonRigth];
     self.navigationItem.rightBarButtonItem = barButtonItemRight;
@@ -232,11 +233,11 @@ typedef NS_ENUM(NSUInteger, MenuTags) {
     if(button.tag == MenuLogin){
         [[NSNotificationCenter defaultCenter] postNotificationName:showMenuViewNotification object:self];
     }
-    else if(button.tag = MenuTotal){
+    else if(button.tag == MenuTotal){
         
         // gclee
         //[[NSNotificationCenter defaultCenter] postNotificationName:showMenuViewNotification object:self];
-        [[NSNotificationCenter defaultCenter] postNotificationName:showMenuViewNotification object:self];
+        [[NSNotificationCenter defaultCenter] postNotificationName:showCommonAlertViewNotification object:self];
     }
     
     

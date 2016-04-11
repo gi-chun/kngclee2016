@@ -102,7 +102,21 @@
     buttonTap.cancelsTouchesInView = NO;
     [backView addGestureRecognizer:buttonTap];
     [self addSubview:backView];
-
+    
+    //containerView
+    CGFloat wMargin = 40;
+    CGFloat height = kScreenBoundsHeight/4*3;
+    CGFloat width = kScreenBoundsWidth - wMargin*2;
+    
+    containerView = [[UIView alloc]initWithFrame:CGRectMake(wMargin, (kScreenBoundsHeight-height)/2, width, height)];
+    containerView.backgroundColor = [UIColor whiteColor];
+    containerView.layer.borderWidth = 2;
+    containerView.layer.borderColor = [UIColor whiteColor].CGColor;
+    containerView.layer.cornerRadius = 5;
+    containerView.layer.masksToBounds = YES;
+    containerView.userInteractionEnabled = YES;
+    [self addSubview:containerView];
+    
 //      containerView =
     
 //    UIImage *backgroundImage = [[UIImage imageNamed:@"layer_pd_popup_bg.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(10, 10, 10, 10)];
