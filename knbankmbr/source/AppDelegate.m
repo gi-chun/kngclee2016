@@ -12,17 +12,21 @@
 #import "VCFloatingActionButton.h"
 #import "CKMenuView.h"
 #import "CKCommonAlert.h"
+#import "CKLoadingView.h"
 
 @interface AppDelegate ()<CKMenuViewDelegate,
-                        CKCommonAlertDelegate>
+                        CKCommonAlertDelegate,
+                        CKLoadingViewDelegate>
 {
     UIView *shadow;
     UIButton *btnCompose;
     VCFloatingActionButton *addButton;
     CKMenuView *menuView;
     CKCommonAlert *commonAlertView;
+    CKLoadingView *loadingView;
     NSInteger *isShowedMenuView;
     NSInteger *isShowedAlertView;
+    NSInteger *isShowedLoadingView;
     
 }
 @end
@@ -109,6 +113,7 @@
     
     isShowedMenuView = commonHide;
     isShowedAlertView = commonHide;
+    isShowedLoadingView = commonHide;
     /////////////////////////////////////////////////////////////////////////////////////////////////////////////
     
     [[NSNotificationCenter defaultCenter] addObserver:self
@@ -121,6 +126,10 @@
                                                  name:showCommonAlertViewNotification
                                                object:nil];
     
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(hideLoadingView:)
+                                                 name:showLoadingViewNotification
+                                               object:nil];
     
     
     //create application main window - subview - global view
@@ -353,6 +362,34 @@
     
 }
 
+-(void) hideLoadingView:(NSInteger)isShow
+{
+    NSLog(@"show Loding view %tu",isShow);
+    
+    if(isShowedLoadingView){
+        isShowedLoadingView = commonHide;
+        [loadingView stopAnimation];
+        
+        if (loadingView) {
+            for (UIView *subView in [loadingView subviews]) {
+                [subView removeFromSuperview];
+            }
+            [loadingView removeFromSuperview];
+            loadingView = nil;
+        }
+        
+    }
+    else{// 0
+        isShowedLoadingView = commonShow;
+        loadingView = [[CKLoadingView alloc]initWithFrame:[UIScreen mainScreen].bounds];
+        loadingView.delegate = self;
+        [self.window addSubview:loadingView];
+        
+        [loadingView startAnimation];
+    }
+}
+
+
 -(void) hideAlertView:(NSInteger)isShow
 {
     NSLog(@"show common Alert view %tu",isShow);
@@ -408,6 +445,13 @@
 //        commonAlertView.frame = initalFrame;
 //        [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(moveCommonAlert:) userInfo:@0 repeats:NO];
     }
+}
+//touchLoadingDissmisView
+#pragma mark - Loading Delegate Method
+
+- (void)touchLoadingDissmisView
+{
+    [self hideLoadingView:0];
 }
 
 #pragma mark - CommonAlert Delegate Method

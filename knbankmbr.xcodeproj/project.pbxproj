@@ -24,6 +24,7 @@
 		280511181C8034FD003A668E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 280511171C8034FD003A668E /* QuartzCore.framework */; };
 		2805111A1C803519003A668E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 280511191C803519003A668E /* UIKit.framework */; };
 		28092A961CABC74900BE312E /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28092A951CABC74900BE312E /* MenuViewController.m */; };
+		281A062A1CBCD13200E6AC2F /* CKLoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 281A06291CBCD13200E6AC2F /* CKLoadingView.m */; };
 		281B57581CAA146A00E6E81B /* CPTouchActionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 281B57571CAA146A00E6E81B /* CPTouchActionView.m */; };
 		281B575F1CAA1D9F00E6E81B /* NSString+URLEncodedString.m in Sources */ = {isa = PBXBuildFile; fileRef = 281B575E1CAA1D9F00E6E81B /* NSString+URLEncodedString.m */; };
 		288F59BD1CA51A7200D08F55 /* floatTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 288F59B91CA51A7200D08F55 /* floatTableViewCell.m */; };
@@ -79,6 +80,8 @@
 		280511191C803519003A668E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		28092A941CABC74900BE312E /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
 		28092A951CABC74900BE312E /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
+		281A06281CBCD13200E6AC2F /* CKLoadingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CKLoadingView.h; path = main/CKLoadingView.h; sourceTree = "<group>"; };
+		281A06291CBCD13200E6AC2F /* CKLoadingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CKLoadingView.m; path = main/CKLoadingView.m; sourceTree = "<group>"; };
 		281B57561CAA146A00E6E81B /* CPTouchActionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPTouchActionView.h; sourceTree = "<group>"; };
 		281B57571CAA146A00E6E81B /* CPTouchActionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CPTouchActionView.m; sourceTree = "<group>"; };
 		281B575D1CAA1D9F00E6E81B /* NSString+URLEncodedString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+URLEncodedString.h"; path = "knbankmbr/source/Common/NSString+URLEncodedString.h"; sourceTree = SOURCE_ROOT; };
@@ -148,6 +151,8 @@
 				28092A941CABC74900BE312E /* MenuViewController.h */,
 				28092A951CABC74900BE312E /* MenuViewController.m */,
 				280224F51CBB6EF700520DAB /* CKCommonAlert.h */,
+				281A06281CBCD13200E6AC2F /* CKLoadingView.h */,
+				281A06291CBCD13200E6AC2F /* CKLoadingView.m */,
 				280224F61CBB6EF700520DAB /* CKCommonAlert.m */,
 				280432981CACBC33001B7084 /* CKMenuView.h */,
 				280432991CACBC33001B7084 /* CKMenuView.m */,
@@ -418,6 +423,7 @@
 				288F59BD1CA51A7200D08F55 /* floatTableViewCell.m in Sources */,
 				280511001C800109003A668E /* AppDelegate.m in Sources */,
 				2804329A1CACBC33001B7084 /* CKMenuView.m in Sources */,
+				281A062A1CBCD13200E6AC2F /* CKLoadingView.m in Sources */,
 				280510E31C7FE9AE003A668E /* main.m in Sources */,
 				28092A961CABC74900BE312E /* MenuViewController.m in Sources */,
 			);

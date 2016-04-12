@@ -51,7 +51,8 @@ typedef NS_ENUM(NSUInteger, MenuTags) {
     [buttonLeft setTitle:@"" forState:UIControlStateNormal];
     [buttonLeft addTarget:self action:@selector(doSomething:)forControlEvents:UIControlEventTouchUpInside];
     //[buttonLeft sizeToFit];
-    buttonLeft.imageEdgeInsets = UIEdgeInsetsMake(0, -20, 0, 20);
+    //top,left bottom,right
+    buttonLeft.imageEdgeInsets = UIEdgeInsetsMake(0, -10, 0, 10);
     [buttonLeft setTag:MenuLogin];
     
     UIBarButtonItem* barButtonItemLeft = [[UIBarButtonItem alloc] initWithCustomView:buttonLeft];
@@ -64,7 +65,7 @@ typedef NS_ENUM(NSUInteger, MenuTags) {
     [buttonRigth addTarget:self action:@selector(doSomething:)forControlEvents:UIControlEventTouchUpInside];
     //[buttonRigth sizeToFit];
     [buttonRigth setTag:MenuTotal];
-    buttonRigth.imageEdgeInsets = UIEdgeInsetsMake(0, 20, 0, -20);
+    buttonRigth.imageEdgeInsets = UIEdgeInsetsMake(0, 10, 0, -10);
     UIBarButtonItem* barButtonItemRight = [[UIBarButtonItem alloc] initWithCustomView:buttonRigth];
     self.navigationItem.rightBarButtonItem = barButtonItemRight;
     
@@ -231,7 +232,11 @@ typedef NS_ENUM(NSUInteger, MenuTags) {
     UIButton *button = (UIButton *)sender;
     
     if(button.tag == MenuLogin){
-        [[NSNotificationCenter defaultCenter] postNotificationName:showMenuViewNotification object:self];
+        
+        //gclee
+        //[[NSNotificationCenter defaultCenter] postNotificationName:showMenuViewNotification object:self];
+        [[NSNotificationCenter defaultCenter] postNotificationName:showLoadingViewNotification object:self];
+        
     }
     else if(button.tag == MenuTotal){
         
