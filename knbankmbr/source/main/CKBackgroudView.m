@@ -1,12 +1,12 @@
 //
-//  CKCommonAlert.m
+//  CKBackgroudView.m
 //  knbankmbr
 //
 //  Created by gclee on 2016. 3. 31..
 //  Copyright © 2016년 knbank. All rights reserved.
 //
 
-#import "CKLoadingView.h"
+#import "CKBackgroudView.h"
 
 #define HEADVIEW_HEIGHT      100
 #define LEFTVIEW_WIDTH       100
@@ -16,9 +16,14 @@
 
 //-------------------------------
 
+
+
+
+
+
 //-------------------------------
 
-@interface CKLoadingView() <CKLoadingViewDelegate>
+@interface CKBackgroudView() <CKBackgroudViewDelegate>
 {
 //    NSString *title;
 //    NSString *linkUrl;
@@ -31,13 +36,13 @@
     UIScrollView *leftVerticalView;
     UIScrollView *CenterHorizontalView;
     
-    UIImageView *loadingView;
+    UIImageView *blurView;
     UIWindow *mainWindow;
 }
 
 @end
 
-@implementation CKLoadingView
+@implementation CKBackgroudView
 
 - (void)releaseItem
 {
@@ -93,51 +98,14 @@
     backView.userInteractionEnabled = YES;
     backView.backgroundColor = [UIColor colorWithWhite:0 alpha:0.2];
     backView.alpha = 0.2;
-    
-    UITapGestureRecognizer *buttonTap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(handleTap:)];
-    buttonTap.cancelsTouchesInView = NO;
-    [backView addGestureRecognizer:buttonTap];
     [self addSubview:backView];
     
     //containerView
-    CGFloat wMargin = 40;
-    CGFloat height = 60;
-    CGFloat width = 60;
+    blurView = [[UIImageView alloc]initWithFrame:[UIScreen mainScreen].bounds];
+    blurView.userInteractionEnabled = YES;
+    blurView.image = [UIImage imageNamed:@"sample.jpg"];
     
-    UIImage *iconImage1 = [UIImage imageNamed:@"twitter-icon.png"];
-    UIImage *iconImage2 = [UIImage imageNamed:@"google-icon.png"];
-    UIImage *iconImage3 = [UIImage imageNamed:@"fb-icon.png"];
-    UIImage *iconImage4 = [UIImage imageNamed:@"linkedin-icon.png"];
-    UIImage *iconImage5 = [UIImage imageNamed:@"twitter-icon.png"];
-    UIImage *iconImage6 = [UIImage imageNamed:@"google-icon.png"];
-    
-    loadingView = [[UIImageView alloc] initWithFrame:CGRectMake((kScreenBoundsWidth-width)/2, (kScreenBoundsHeight-height)/2, width, height)];
-    [self addSubview:loadingView];
-    
-    loadingView.animationImages = [NSArray arrayWithObjects:
-                                   iconImage1,
-                                   iconImage2,
-                                   iconImage3,
-                                   iconImage4,
-                                   iconImage5,
-                                   iconImage6, nil];
-    
-    loadingView.animationDuration = 1.0f;
-    loadingView.animationRepeatCount = 0;
-    
-    //containerView
-//    CGFloat wMargin = 40;
-//    CGFloat height = kScreenBoundsHeight/4*3;
-//    CGFloat width = kScreenBoundsWidth - wMargin*2;
-//    
-//    containerView = [[UIView alloc]initWithFrame:CGRectMake(wMargin, (kScreenBoundsHeight-height)/2, width, height)];
-//    containerView.backgroundColor = [UIColor whiteColor];
-//    containerView.layer.borderWidth = 2;
-//    containerView.layer.borderColor = [UIColor whiteColor].CGColor;
-//    containerView.layer.cornerRadius = 5;
-//    containerView.layer.masksToBounds = YES;
-//    containerView.userInteractionEnabled = YES;
-//    [self addSubview:containerView];
+    [self addSubview:blurView];
     
 //      containerView =
     
@@ -178,28 +146,6 @@
 //    [containerView addSubview:aWebview];
     
 }
-
--(void)handleTap:(id)sender //close view
-{
-    [self.delegate touchLoadingDissmisView];
-}
-
-- (void)setIsAnimating:(BOOL)isAnimating
-{
-    _isAnimating = loadingView.isAnimating;
-}
-
-- (void)startAnimation
-{
-    [loadingView startAnimating];
-}
-
-- (void)stopAnimation
-{
-    [loadingView stopAnimating];
-}
-
-
 
 
 @end

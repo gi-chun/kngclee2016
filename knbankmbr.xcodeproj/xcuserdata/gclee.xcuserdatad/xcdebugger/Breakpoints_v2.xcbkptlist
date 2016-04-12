@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "knbankmbr/source/AppDelegate.m"
-            timestampString = "482139141.238113"
+            timestampString = "482145586.4973"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "492"
-            endingLineNumber = "492"
+            startingLineNumber = "529"
+            endingLineNumber = "529"
             landmarkName = "-moveCommonAlert:"
             landmarkType = "5">
          </BreakpointContent>

@@ -61,6 +61,8 @@ static NSString * SEND_PWD_MAIL_KO = @"회원님의 등록된 메일 주소로\n
 static NSString * showMenuViewNotification = @"showMenuViewNotification";
 static NSString * showCommonAlertViewNotification = @"showCommonAlertViewNotification";
 static NSString * showLoadingViewNotification = @"showLoadingViewNotification";
+static NSString * showBackgroudViewNotification = @"showBackgroudViewNotification";
+
 
 typedef NS_ENUM(NSUInteger, CommonShowedFlag) {
     commonHide = 0,

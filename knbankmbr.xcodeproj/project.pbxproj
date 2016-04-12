@@ -25,6 +25,8 @@
 		2805111A1C803519003A668E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 280511191C803519003A668E /* UIKit.framework */; };
 		28092A961CABC74900BE312E /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28092A951CABC74900BE312E /* MenuViewController.m */; };
 		281A062A1CBCD13200E6AC2F /* CKLoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 281A06291CBCD13200E6AC2F /* CKLoadingView.m */; };
+		281A062D1CBCE91800E6AC2F /* CKBackgroudView.m in Sources */ = {isa = PBXBuildFile; fileRef = 281A062C1CBCE91800E6AC2F /* CKBackgroudView.m */; };
+		281A062F1CBCF1E600E6AC2F /* sample.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 281A062E1CBCF1E600E6AC2F /* sample.jpg */; };
 		281B57581CAA146A00E6E81B /* CPTouchActionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 281B57571CAA146A00E6E81B /* CPTouchActionView.m */; };
 		281B575F1CAA1D9F00E6E81B /* NSString+URLEncodedString.m in Sources */ = {isa = PBXBuildFile; fileRef = 281B575E1CAA1D9F00E6E81B /* NSString+URLEncodedString.m */; };
 		288F59BD1CA51A7200D08F55 /* floatTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 288F59B91CA51A7200D08F55 /* floatTableViewCell.m */; };
@@ -82,6 +84,9 @@
 		28092A951CABC74900BE312E /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
 		281A06281CBCD13200E6AC2F /* CKLoadingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CKLoadingView.h; path = main/CKLoadingView.h; sourceTree = "<group>"; };
 		281A06291CBCD13200E6AC2F /* CKLoadingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CKLoadingView.m; path = main/CKLoadingView.m; sourceTree = "<group>"; };
+		281A062B1CBCE91800E6AC2F /* CKBackgroudView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CKBackgroudView.h; path = main/CKBackgroudView.h; sourceTree = "<group>"; };
+		281A062C1CBCE91800E6AC2F /* CKBackgroudView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CKBackgroudView.m; path = main/CKBackgroudView.m; sourceTree = "<group>"; };
+		281A062E1CBCF1E600E6AC2F /* sample.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sample.jpg; sourceTree = "<group>"; };
 		281B57561CAA146A00E6E81B /* CPTouchActionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPTouchActionView.h; sourceTree = "<group>"; };
 		281B57571CAA146A00E6E81B /* CPTouchActionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CPTouchActionView.m; sourceTree = "<group>"; };
 		281B575D1CAA1D9F00E6E81B /* NSString+URLEncodedString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+URLEncodedString.h"; path = "knbankmbr/source/Common/NSString+URLEncodedString.h"; sourceTree = SOURCE_ROOT; };
@@ -154,6 +159,8 @@
 				281A06281CBCD13200E6AC2F /* CKLoadingView.h */,
 				281A06291CBCD13200E6AC2F /* CKLoadingView.m */,
 				280224F61CBB6EF700520DAB /* CKCommonAlert.m */,
+				281A062B1CBCE91800E6AC2F /* CKBackgroudView.h */,
+				281A062C1CBCE91800E6AC2F /* CKBackgroudView.m */,
 				280432981CACBC33001B7084 /* CKMenuView.h */,
 				280432991CACBC33001B7084 /* CKMenuView.m */,
 			);
@@ -261,6 +268,7 @@
 				288F59C11CA51B7000D08F55 /* fb-icon.png */,
 				288F59C21CA51B7000D08F55 /* google-icon.png */,
 				288F59C31CA51B7000D08F55 /* linkedin-icon.png */,
+				281A062E1CBCF1E600E6AC2F /* sample.jpg */,
 				288F59C41CA51B7000D08F55 /* plus.png */,
 				288F59C51CA51B7000D08F55 /* twitter-icon.png */,
 			);
@@ -394,6 +402,7 @@
 				280510EE1C7FE9AE003A668E /* Assets.xcassets in Resources */,
 				288F59C81CA51B7000D08F55 /* google-icon.png in Resources */,
 				288F59CB1CA51B7000D08F55 /* twitter-icon.png in Resources */,
+				281A062F1CBCF1E600E6AC2F /* sample.jpg in Resources */,
 				28BDEFB21CA113EA009E0B7A /* location_icon@2x.png in Resources */,
 				280511081C80042E003A668E /* LaunchScreen.storyboard in Resources */,
 				288F59C71CA51B7000D08F55 /* fb-icon.png in Resources */,
@@ -420,6 +429,7 @@
 				280511011C800109003A668E /* ViewController.m in Sources */,
 				281B575F1CAA1D9F00E6E81B /* NSString+URLEncodedString.m in Sources */,
 				28BDEFB61CA127CE009E0B7A /* UIImage+ImageWithColor.m in Sources */,
+				281A062D1CBCE91800E6AC2F /* CKBackgroudView.m in Sources */,
 				288F59BD1CA51A7200D08F55 /* floatTableViewCell.m in Sources */,
 				280511001C800109003A668E /* AppDelegate.m in Sources */,
 				2804329A1CACBC33001B7084 /* CKMenuView.m in Sources */,

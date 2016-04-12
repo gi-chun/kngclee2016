@@ -13,6 +13,7 @@
 #import "CKMenuView.h"
 #import "CKCommonAlert.h"
 #import "CKLoadingView.h"
+#import "CKBackgroudView.h"
 
 @interface AppDelegate ()<CKMenuViewDelegate,
                         CKCommonAlertDelegate,
@@ -24,9 +25,11 @@
     CKMenuView *menuView;
     CKCommonAlert *commonAlertView;
     CKLoadingView *loadingView;
+    CKBackgroudView *backgroudView;
     NSInteger *isShowedMenuView;
     NSInteger *isShowedAlertView;
     NSInteger *isShowedLoadingView;
+    NSInteger *isShowedBackgroudView;
     
 }
 @end
@@ -114,6 +117,7 @@
     isShowedMenuView = commonHide;
     isShowedAlertView = commonHide;
     isShowedLoadingView = commonHide;
+    isShowedBackgroudView = commonShow;
     /////////////////////////////////////////////////////////////////////////////////////////////////////////////
     
     [[NSNotificationCenter defaultCenter] addObserver:self
@@ -129,6 +133,11 @@
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(hideLoadingView:)
                                                  name:showLoadingViewNotification
+                                               object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(hideBackgroudView:)
+                                                 name:showBackgroudViewNotification
                                                object:nil];
     
     
@@ -198,6 +207,8 @@
 - (void)applicationDidEnterBackground:(UIApplication *)application {
     // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:showBackgroudViewNotification object:self];
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {
@@ -206,6 +217,8 @@
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:showBackgroudViewNotification object:self];
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application {
@@ -360,6 +373,30 @@
     
     
     
+}
+
+-(void) hideBackgroudView:(NSInteger)isShow
+{
+    NSLog(@"show Backgroud view %tu",isShow);
+    
+    if(isShowedBackgroudView){
+        isShowedBackgroudView = commonHide;
+        
+        if (backgroudView) {
+            for (UIView *subView in [backgroudView subviews]) {
+                [subView removeFromSuperview];
+            }
+            [backgroudView removeFromSuperview];
+            backgroudView = nil;
+        }
+        
+    }
+    else{// 0
+        isShowedBackgroudView = commonShow;
+        backgroudView = [[CKBackgroudView alloc]initWithFrame:[UIScreen mainScreen].bounds];
+        backgroudView.delegate = self;
+        [self.window addSubview:backgroudView];
+    }
 }
 
 -(void) hideLoadingView:(NSInteger)isShow
