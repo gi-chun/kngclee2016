@@ -14,10 +14,12 @@
 #import "CKCommonAlert.h"
 #import "CKLoadingView.h"
 #import "CKBackgroudView.h"
+#import "CKIntroView.h"
 
 @interface AppDelegate ()<CKMenuViewDelegate,
                         CKCommonAlertDelegate,
-                        CKLoadingViewDelegate>
+                        CKLoadingViewDelegate,
+                        CKIntroViewDelegate>
 {
     UIView *shadow;
     UIButton *btnCompose;
@@ -26,10 +28,12 @@
     CKCommonAlert *commonAlertView;
     CKLoadingView *loadingView;
     CKBackgroudView *backgroudView;
+    CKIntroView *introView;
     NSInteger *isShowedMenuView;
     NSInteger *isShowedAlertView;
     NSInteger *isShowedLoadingView;
     NSInteger *isShowedBackgroudView;
+    NSInteger *isShowedIntroView;
     
 }
 @end
@@ -118,6 +122,7 @@
     isShowedAlertView = commonHide;
     isShowedLoadingView = commonHide;
     isShowedBackgroudView = commonShow;
+    isShowedIntroView = commonHide;
     /////////////////////////////////////////////////////////////////////////////////////////////////////////////
     
     [[NSNotificationCenter defaultCenter] addObserver:self
@@ -139,6 +144,15 @@
                                              selector:@selector(hideBackgroudView:)
                                                  name:showBackgroudViewNotification
                                                object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(hideIntroView:)
+                                                 name:showIntroViewNotification
+                                               object:nil];
+    
+    //show Intro
+    [[NSNotificationCenter defaultCenter] postNotificationName:showIntroViewNotification object:self];
+
     
     
     //create application main window - subview - global view
@@ -376,6 +390,30 @@
     
 }
 
+-(void) hideIntroView:(NSInteger)isShow
+{
+    NSLog(@"show Intro view %tu",isShow);
+    
+    if(isShowedIntroView){
+        isShowedIntroView = commonHide;
+        
+        if (introView) {
+            for (UIView *subView in [introView subviews]) {
+                [subView removeFromSuperview];
+            }
+            [introView removeFromSuperview];
+            introView = nil;
+        }
+        
+    }
+    else{// 0
+        isShowedIntroView = commonShow;
+        introView = [[CKIntroView alloc]initWithFrame:[UIScreen mainScreen].bounds];
+        introView.delegate = self;
+        [self.window addSubview:introView];
+    }
+}
+
 -(void) hideBackgroudView:(NSInteger)isShow
 {
     NSLog(@"show Backgroud view %tu",isShow);
@@ -484,7 +522,14 @@
 //        [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(moveCommonAlert:) userInfo:@0 repeats:NO];
     }
 }
-//touchLoadingDissmisView
+
+#pragma mark - Intro Delegate Method
+
+- (void)touchIntroDissmisView
+{
+    [self hideIntroView:0];
+}
+
 #pragma mark - Loading Delegate Method
 
 - (void)touchLoadingDissmisView

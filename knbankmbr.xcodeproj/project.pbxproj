@@ -42,6 +42,7 @@
 		28BDEFB21CA113EA009E0B7A /* location_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 28BDEFAF1CA113EA009E0B7A /* location_icon@2x.png */; };
 		28BDEFB31CA113EA009E0B7A /* location_icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 28BDEFB01CA113EA009E0B7A /* location_icon@3x.png */; };
 		28BDEFB61CA127CE009E0B7A /* UIImage+ImageWithColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 28BDEFB51CA127CE009E0B7A /* UIImage+ImageWithColor.m */; };
+		28CC68C41CC7347A00EA053F /* CKIntroView.m in Sources */ = {isa = PBXBuildFile; fileRef = 28CC68C31CC7347A00EA053F /* CKIntroView.m */; };
 		28D3DF341CB7888800173CB1 /* INISAFE_CMP_for_C_v3.4.2_iOS_8.1_Universal.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 28D3DF2C1CB7888800173CB1 /* INISAFE_CMP_for_C_v3.4.2_iOS_8.1_Universal.a */; };
 		28D3DF351CB7888800173CB1 /* INISAFE_Core_for_C_v2.4.0_iOS_8.1_Universal.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 28D3DF2D1CB7888800173CB1 /* INISAFE_Core_for_C_v2.4.0_iOS_8.1_Universal.a */; };
 		28D3DF361CB7888800173CB1 /* INISAFE_Sign_for_C_v4.4.0_iOS_8.1_Universal.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 28D3DF2E1CB7888800173CB1 /* INISAFE_Sign_for_C_v4.4.0_iOS_8.1_Universal.a */; };
@@ -107,6 +108,8 @@
 		28BDEFB01CA113EA009E0B7A /* location_icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "location_icon@3x.png"; sourceTree = "<group>"; };
 		28BDEFB41CA127CE009E0B7A /* UIImage+ImageWithColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageWithColor.h"; sourceTree = "<group>"; };
 		28BDEFB51CA127CE009E0B7A /* UIImage+ImageWithColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageWithColor.m"; sourceTree = "<group>"; };
+		28CC68C21CC7347A00EA053F /* CKIntroView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CKIntroView.h; path = main/CKIntroView.h; sourceTree = "<group>"; };
+		28CC68C31CC7347A00EA053F /* CKIntroView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CKIntroView.m; path = main/CKIntroView.m; sourceTree = "<group>"; };
 		28D3DF2C1CB7888800173CB1 /* INISAFE_CMP_for_C_v3.4.2_iOS_8.1_Universal.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = INISAFE_CMP_for_C_v3.4.2_iOS_8.1_Universal.a; sourceTree = "<group>"; };
 		28D3DF2D1CB7888800173CB1 /* INISAFE_Core_for_C_v2.4.0_iOS_8.1_Universal.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = INISAFE_Core_for_C_v2.4.0_iOS_8.1_Universal.a; sourceTree = "<group>"; };
 		28D3DF2E1CB7888800173CB1 /* INISAFE_Sign_for_C_v4.4.0_iOS_8.1_Universal.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = INISAFE_Sign_for_C_v4.4.0_iOS_8.1_Universal.a; sourceTree = "<group>"; };
@@ -159,6 +162,8 @@
 				281A06281CBCD13200E6AC2F /* CKLoadingView.h */,
 				281A06291CBCD13200E6AC2F /* CKLoadingView.m */,
 				280224F61CBB6EF700520DAB /* CKCommonAlert.m */,
+				28CC68C21CC7347A00EA053F /* CKIntroView.h */,
+				28CC68C31CC7347A00EA053F /* CKIntroView.m */,
 				281A062B1CBCE91800E6AC2F /* CKBackgroudView.h */,
 				281A062C1CBCE91800E6AC2F /* CKBackgroudView.m */,
 				280432981CACBC33001B7084 /* CKMenuView.h */,
@@ -428,6 +433,7 @@
 				281B57581CAA146A00E6E81B /* CPTouchActionView.m in Sources */,
 				280511011C800109003A668E /* ViewController.m in Sources */,
 				281B575F1CAA1D9F00E6E81B /* NSString+URLEncodedString.m in Sources */,
+				28CC68C41CC7347A00EA053F /* CKIntroView.m in Sources */,
 				28BDEFB61CA127CE009E0B7A /* UIImage+ImageWithColor.m in Sources */,
 				281A062D1CBCE91800E6AC2F /* CKBackgroudView.m in Sources */,
 				288F59BD1CA51A7200D08F55 /* floatTableViewCell.m in Sources */,

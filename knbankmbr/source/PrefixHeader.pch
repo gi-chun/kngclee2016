@@ -62,6 +62,7 @@ static NSString * showMenuViewNotification = @"showMenuViewNotification";
 static NSString * showCommonAlertViewNotification = @"showCommonAlertViewNotification";
 static NSString * showLoadingViewNotification = @"showLoadingViewNotification";
 static NSString * showBackgroudViewNotification = @"showBackgroudViewNotification";
+static NSString * showIntroViewNotification = @"showIntroViewNotification";
 
 
 typedef NS_ENUM(NSUInteger, CommonShowedFlag) {
