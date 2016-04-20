@@ -536,7 +536,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/knbankmbr/externLib",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.knb.test101;
+				PRODUCT_BUNDLE_IDENTIFIER = com.knb.mbr;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -556,7 +556,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/knbankmbr/externLib",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.knb.test101;
+				PRODUCT_BUNDLE_IDENTIFIER = com.knb.mbr;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
